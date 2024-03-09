@@ -62,6 +62,7 @@ A server should support the operations listed in the API definition, in server.e
 
 
 **Notes**
+
 • This assignment is about modeling a scalable system using Erlang processes and message passing. Hence, do not use Erlang databases like Mnesia or Riak, or frameworks like Erlang’s OTP or Rab- bitMQ. They will obscure your results and make it harder to compare approaches.
 
 • The aim of this project is to focus on parallelism, not distribution. You should therefore not ex- periment with distributing server processes over multiple machines, instead, run everything in one Erlang VM and use regular message passing to communicate between processes.
@@ -69,6 +70,7 @@ A server should support the operations listed in the API definition, in server.e
 • Furthermore,your application only needs to support the minimal set of operations described above, and should not support any of the advanced features that real applications offer. Focus on the parallel and concurrency aspects.
 
 • Finally, you do not need to take into account authentication or privacy. Our system for instance does not have passwords and allows users to log in and send messages in the name of other users. For the purposes of this project, you should not take these concerns into account.
+
 **Pitfalls**
 
 • Garbage collection issues:spawn new processes foreach benchmark run,and make sure that they terminate after the benchmark. I.e. each of the 30 repetitions should spawn new, freshly initialized, server processes.
