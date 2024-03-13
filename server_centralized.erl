@@ -25,6 +25,7 @@ initialize() ->
 % Useful for benchmarking.
 initialize_with(Users) ->
     ServerPid = spawn_link(?MODULE, server_actor, [Users]),
+   
     catch unregister(server_actor),
     register(server_actor, ServerPid),
     ServerPid.
@@ -37,12 +38,36 @@ initialize_with(Users) ->
 % where Subscriptions is a set of usernames that the user follows, and
 % Messages is a list of messages, of the form:
 %     {message, UserName, MessageText, SendTime}
+%
+%
+%
+%
+%Client to server 
 server_actor(Users) ->
+    TreshHoldUsers = 100, %differ this to test the parallel process 
     receive
+% When message received, spawn new 
         {Sender, register_user, UserName} ->
             NewUsers = dict:store(UserName, create_user(UserName), Users),
             Sender ! {self(), user_registered},
-            server_actor(NewUsers);
+            
+             %When too much registered_users -> make a parallel server that handles half of the users ?
+	    AmountOfUsers = dict:size(Users),
+	    %io:fwrite("AmountOfUsers: ", []),
+	    %io:fwrite(AmountOfUsers),
+            
+	    if AmountOfUsers > TreshHoldUsers -> 
+	               Users2 = NewUsers, %split Users 
+		       Users1 = NewUsers, 
+		       initialize_with(Users2),
+		       initialize_with(Users1);
+		       %TODO: make a link between the servers to communicate with each other
+		       %TODO: split the Users such that each server has a range of alfabetic letters, easier to send to other servers, to get a message
+		true -> 
+		       server_actor(NewUsers)
+	   end;
+		       
+           % server_actor(NewUsers);
 
         {Sender, log_in, _UserName} ->
             % This doesn't do anything, but you could use this operation if needed.
@@ -137,6 +162,7 @@ initialize_test() ->
 % Initialize server and test user registration of 4 users.
 % Returns list of user names to be used in subsequent tests.
 register_user_test() ->
+    io:write("Registering users..."),
     initialize_test(),
     ?assertMatch({_, user_registered}, server:register_user(server_actor, "A")),
     ?assertMatch({_, user_registered}, server:register_user(server_actor, "B")),
