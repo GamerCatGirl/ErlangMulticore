@@ -55,7 +55,6 @@ server_actor(Users, CharBegin, CharEnd) ->
             
              %When too much registered_users -> make a parallel server that handles half of the users ?
 	    AmountOfUsers = orddict:size(NewUsers),
-	    erlang:display(Users),
 	    %Filter = fun((Key, Value) -> boolean())
 	    %erlang:display(Users),
             
@@ -84,9 +83,7 @@ server_actor(Users, CharBegin, CharEnd) ->
 		       OldPid = server_actor(Users1, CharBegin, Split),
 
 	       	       FirstChar = lists:nth(1, UserName), 
-		       Condition = FirstChar > Split,
-
-	       	       if 
+		     	if 
 			       FirstChar > Split ->
 				       erlang:display(NewPid),
 				       NewPid;
@@ -102,7 +99,10 @@ server_actor(Users, CharBegin, CharEnd) ->
 		       
            % server_actor(NewUsers);
 
-        {Sender, log_in, _UserName} ->
+        {Sender, log_in, UserName} ->
+	    erlang:display("Username logging in: "),
+	    erlang:display(UserName),
+	    erlang:display(CharBegin),
             % This doesn't do anything, but you could use this operation if needed.
             Sender ! {self(), logged_in},
             server_actor(Users, CharBegin, CharEnd);
@@ -195,31 +195,57 @@ initialize_test() ->
 
 % Initialize server and test user registration of 4 users.
 % Returns list of user names to be used in subsequent tests.
-register_user_test() ->
+register_user_test() -> %register is sequential, but all the rest of the requests are in parallel
     io:write("Registering users..."),
     erlang:display("Registering users..."),
     initialize_test(),
-    ?assertMatch({_, user_registered}, server:register_user(server_actor, "A")),
-    ?assertMatch({_, user_registered}, server:register_user(server_actor, "B")),
-    ?assertMatch({_, user_registered}, server:register_user(server_actor, "C")),
-    ?assertMatch({_, user_registered}, server:register_user(server_actor, "D")),
-    ?assertMatch({_, user_registered}, server:register_user(server_actor, "W")),
-    ?assertMatch({_, user_registered}, server:register_user(server_actor, "X")),
-    ?assertMatch({_, user_registered}, server:register_user(server_actor, "Y")),
-    ?assertMatch({_, user_registered}, server:register_user(server_actor, "Z")),
-    ["A", "B", "C", "D", "E", "F", "G", "H"].
 
-% Test log in.
+    UserName1 = "A",
+    UserName2 = "B", 
+    UserName3 = "C", 
+    UserName4 = "D",
+    UserName5 = "W",
+    UserName6 = "X",
+    UserName7 = "Y",
+    UserName8 = "Z",
+
+
+    {Server1, Response1} = server:register_user(server_actor, UserName1),
+    {Server2, Response2} = server:register_user(server_actor, UserName2),
+    {Server3, Response3} = server:register_user(server_actor, UserName3),
+    {Server4, Response4} = server:register_user(server_actor, UserName4),
+    {Server5, Response5} = server:register_user(server_actor, UserName5),
+    {Server6, Response6} = server:register_user(server_actor, UserName6),
+    {Server7, Response7} = server:register_user(server_actor, UserName7),
+    {Server8, Response8} = server:register_user(server_actor, UserName8),
+
+
+    ?assertMatch(user_registered, Response1),
+    ?assertMatch(user_registered, Response2),
+    ?assertMatch(user_registered, Response3),
+    ?assertMatch(user_registered, Response4),
+    ?assertMatch(user_registered, Response5),
+    ?assertMatch(user_registered, Response6),
+    ?assertMatch(user_registered, Response7),
+    ?assertMatch(user_registered, Response8),
+     [UserName1, Server1, UserName2, Server2, UserName3, Server3, UserName4, Server4, UserName5, Server5, UserName6, Server6, UserName7, Server7, UserName8, Server8].
+    % Test log in.
 log_in_test() ->
     erlang:display("Logging in users..."),
-    [UserName1, UserName2 | _] = register_user_test(),
-    ?assertMatch({_Server1, logged_in}, server:log_in(server_actor, UserName1)),
-    ?assertMatch({_Server2, logged_in}, server:log_in(server_actor, UserName2)).
+    [UserName1, Server1, UserName2, Server2, UserName3, Server3, UserName4, Server4, UserName5, Server5, UserName6, Server6, UserName7, Server7, UserName8, Server8 | _] = register_user_test(),
+    LoggedInUser1 = server:log_in(Server1, UserName1),
+    erlang:display(LoggedInUser1),
+    LoggedInUser6 = server:log_in(Server8, UserName8),
+    erlang:display(LoggedInUser6),
+    ?assertMatch({_Server1, logged_in}, LoggedInUser1),
+    ?assertMatch({_Server2, logged_in}, LoggedInUser6).
+  
     % Note: returned pids _Server1 and _Server2 do not necessarily need to be
     % the same.
 
 % Test follow: user 1 will follow 2 and 3.
 follow_test() ->
+    erlang:display("Following users ..."),
     [UserName1, UserName2, UserName3 | _ ] = register_user_test(),
     {Server1, logged_in} = server:log_in(server_actor, UserName1),
     ?assertMatch(followed, server:follow(Server1, UserName1, UserName2)),
