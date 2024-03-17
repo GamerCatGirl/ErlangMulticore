@@ -6,11 +6,11 @@
 %% This implementation is provided with unit tests, however, these tests are
 %% neither complete nor implementation independent, so be careful when reusing
 %% them.
--module(server_centralized).
+-module(server_parallelized).
 
 -include_lib("eunit/include/eunit.hrl").
 
--export([initialize/0, initialize_with/1, server_actor/1, typical_session_1/1,
+-export([initialize/0, initialize_with/3, server_actor/3, typical_session_1/1,
     typical_session_2/1]).
 
 %%
@@ -19,12 +19,12 @@
 
 % Start server.
 initialize() ->
-    initialize_with(dict:new()).
+    initialize_with(orddict:new(), 32, 126). %username without extended ascii 
 
 % Start server with an initial state.
 % Useful for benchmarking.
-initialize_with(Users) ->
-    ServerPid = spawn_link(?MODULE, server_actor, [Users]),
+initialize_with(Users, CharBegin, CharEnd) ->
+    ServerPid = spawn_link(?MODULE, server_actor, [Users, CharBegin, CharEnd]),
    
     catch unregister(server_actor),
     register(server_actor, ServerPid),
@@ -43,39 +43,88 @@ initialize_with(Users) ->
 %
 %
 %Client to server 
-server_actor(Users) ->
-    TreshHoldUsers = 100, %differ this to test the parallel process 
+server_actor(Users, CharBegin, CharEnd) ->
+    TreshHoldUsers = 5, %differ this to test the parallel process 
     receive
 % When message received, spawn new 
         {Sender, register_user, UserName} ->
-            NewUsers = dict:store(UserName, create_user(UserName), Users),
+	    erlang:display(UserName),
+	    %dict is stoted from A, B, C, ... a, b, c 
+            NewUsers = orddict:store(UserName, create_user(UserName), Users),
             Sender ! {self(), user_registered},
-	    server_actor(NewUsers);
-	  		       
+            
+             %When too much registered_users -> make a parallel server that handles half of the users ?
+	    AmountOfUsers = orddict:size(NewUsers),
+	    erlang:display(Users),
+	    %Filter = fun((Key, Value) -> boolean())
+	    %erlang:display(Users),
+            
+            
+	    if AmountOfUsers > TreshHoldUsers ->
+		       erlang:display("Splitting Users over different servers..."),
+		       Range = CharEnd - CharBegin,
+		       NewRange = Range div 2,
+		       Split = CharBegin + NewRange,
+		       erlang:display(Split),
+		       Filter = fun (K, V) -> 
+						FirstChar = lists:nth(1, K), 
+						FirstChar > Split 
+				end,
+		       ReversedFilter = fun(K, V) -> not Filter(K, V) end,
+			%TODO: make sure that if you have multiple with same starting letter that it somtimes also looks further than the first charachter 
+		       
+		       % Filter: get all where Filter is True 
+	               Users2 = orddict:filter(Filter, NewUsers),
+
+                       % Remove: all where Filter is True
+                       Users1 = orddict:filter(ReversedFilter, NewUsers),
+
+		       NewPid = initialize_with(Users2, Split, CharEnd),
+
+		       OldPid = server_actor(Users1, CharBegin, Split),
+
+	       	       FirstChar = lists:nth(1, UserName), 
+		       Condition = FirstChar > Split,
+
+	       	       if 
+			       FirstChar > Split ->
+				       erlang:display(NewPid),
+				       NewPid;
+		       true -> 
+				       erlang:display(OldPid),
+				       OldPid 
+		       end;
+		       %TODO: make a link between the servers to communicate with each other
+		       %TODO: split the Users such that each server has a range of alfabetic letters, easier to send to other servers, to get a message
+		true -> 
+		       server_actor(NewUsers, CharBegin, CharEnd)
+	   end;
+		       
            % server_actor(NewUsers);
 
         {Sender, log_in, _UserName} ->
             % This doesn't do anything, but you could use this operation if needed.
             Sender ! {self(), logged_in},
-            server_actor(Users);
+            server_actor(Users, CharBegin, CharEnd);
 
         {Sender, follow, UserName, UserNameToFollow} ->
             NewUsers = follow(Users, UserName, UserNameToFollow),
             Sender ! {self(), followed},
-            server_actor(NewUsers);
+            server_actor(NewUsers, CharBegin, CharEnd);
 
         {Sender, send_message, UserName, MessageText, Timestamp} ->
             NewUsers = store_message(Users, {message, UserName, MessageText, Timestamp}),
             Sender ! {self(), message_sent},
-            server_actor(NewUsers);
+            server_actor(NewUsers, CharBegin, CharEnd);
 
         {Sender, get_timeline, UserName} ->
             Sender ! {self(), timeline, UserName, timeline(Users, UserName)},
-            server_actor(Users);
+            server_actor(Users, CharBegin, CharEnd);
+
 
         {Sender, get_profile, UserName} ->
             Sender ! {self(), profile, UserName, sort_messages(get_messages(Users, UserName))},
-            server_actor(Users)
+            server_actor(Users, CharBegin, CharEnd)
     end.
 
 %%
@@ -148,15 +197,21 @@ initialize_test() ->
 % Returns list of user names to be used in subsequent tests.
 register_user_test() ->
     io:write("Registering users..."),
+    erlang:display("Registering users..."),
     initialize_test(),
     ?assertMatch({_, user_registered}, server:register_user(server_actor, "A")),
     ?assertMatch({_, user_registered}, server:register_user(server_actor, "B")),
     ?assertMatch({_, user_registered}, server:register_user(server_actor, "C")),
     ?assertMatch({_, user_registered}, server:register_user(server_actor, "D")),
-    ["A", "B", "C", "D"].
+    ?assertMatch({_, user_registered}, server:register_user(server_actor, "W")),
+    ?assertMatch({_, user_registered}, server:register_user(server_actor, "X")),
+    ?assertMatch({_, user_registered}, server:register_user(server_actor, "Y")),
+    ?assertMatch({_, user_registered}, server:register_user(server_actor, "Z")),
+    ["A", "B", "C", "D", "E", "F", "G", "H"].
 
 % Test log in.
 log_in_test() ->
+    erlang:display("Logging in users..."),
     [UserName1, UserName2 | _] = register_user_test(),
     ?assertMatch({_Server1, logged_in}, server:log_in(server_actor, UserName1)),
     ?assertMatch({_Server2, logged_in}, server:log_in(server_actor, UserName2)).
