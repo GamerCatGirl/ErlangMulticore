@@ -48,66 +48,93 @@ server_actor(Users, CharBegin, CharEnd) ->
     receive
 % When message received, spawn new 
         {Sender, register_user, UserName} ->
-	    erlang:display(UserName),
+	 
 	    %dict is stoted from A, B, C, ... a, b, c 
             NewUsers = orddict:store(UserName, create_user(UserName), Users),
-            Sender ! {self(), user_registered},
-            
-             %When too much registered_users -> make a parallel server that handles half of the users ?
+
+            %When too much registered_users -> make a parallel server that handles half of the users ?
 	    AmountOfUsers = orddict:size(NewUsers),
-	    %Filter = fun((Key, Value) -> boolean())
-	    %erlang:display(Users),
-            
+	    %Sender ! {self(), user_registered},
             
 	    if AmountOfUsers > TreshHoldUsers ->
-		       erlang:display("Splitting Users over different servers..."),
 		       Range = CharEnd - CharBegin,
 		       NewRange = Range div 2,
 		       Split = CharBegin + NewRange,
-		       erlang:display(Split),
+			
+		       %functie die alle users verwijderd die verplaatst moeten worden, afhankelijk van de username 
 		       Filter = fun (K, V) -> 
-						FirstChar = lists:nth(1, K), 
-						FirstChar > Split 
+						FirstChar = lists:nth(1, K),
+						%TODO: send to the users that are splitted the new server
+						Condition = FirstChar > Split,
+
+					        %laat user nog staan tot als de user een nieuwe message stuurt en de nieuwe server terug krijgt 	
+						Condition %TODO: test later of the current user deleted is 
 				end,
 		       ReversedFilter = fun(K, V) -> not Filter(K, V) end,
+
+		      
 			%TODO: make sure that if you have multiple with same starting letter that it somtimes also looks further than the first charachter 
 		       
-		       % Filter: get all where Filter is True 
+		      
+
+                                            % Filter: get all where Filter is True 
 	               Users2 = orddict:filter(Filter, NewUsers),
+                       
+	       	       FirstChar2 = lists:nth(1, UserName),
 
-                       % Remove: all where Filter is True
-                       Users1 = orddict:filter(ReversedFilter, NewUsers),
+                       NewPid = initialize_with(Users2, Split + 1, CharEnd),
 
-		       NewPid = initialize_with(Users2, Split, CharEnd),
+                       % Filter: get all where Filter is False (stay in current place)
+                       MapServer = fun (K, V) ->
+					FirstChar = lists:nth(1, K),
+					Condition = FirstChar > Split,
+					{user, Name, Subscriptions, Messages, Server} = V,
 
-		       OldPid = server_actor(Users1, CharBegin, Split),
+					if Condition -> {user, Name, Subscriptions, Messages, NewPid};
+					true -> {user, Name, Subscriptions, Messages, Server} end 
+			           end,
+                       Users1 = orddict:map(MapServer, NewUsers), %TODO: dont use filter but just delete possible current user and set the rest on the different server 
+		       
+                      
 
-	       	       FirstChar = lists:nth(1, UserName), 
-		     	if 
-			       FirstChar > Split ->
-				       erlang:display(NewPid),
-				       NewPid;
+		     	if FirstChar2 > Split ->
+				      UsersWithout = orddict:erase(UserName, Users1),
+				      Sender ! {NewPid, user_registered},
+				      server_actor(UsersWithout, CharBegin, Split);
+
 		       true -> 
-				       erlang:display(OldPid),
-				       OldPid 
-		       end;
-		       %TODO: make a link between the servers to communicate with each other
-		       %TODO: split the Users such that each server has a range of alfabetic letters, easier to send to other servers, to get a message
-		true -> 
+				      Sender ! {self(), user_registered},
+                                      server_actor(Users1, CharBegin, Split)
+
+				   
+			end;
+                       		       %TODO: make a link between the servers to communicate with each other
+		true ->
+		       %SEND the server to send next messages too user 
+		       Sender ! {self(), user_registered},
+
+		       %Activate the server_actor with NewUsers
 		       server_actor(NewUsers, CharBegin, CharEnd)
 	   end;
+	
 		       
            % server_actor(NewUsers);
 
         {Sender, log_in, UserName} ->
-	    erlang:display("Username logging in: "),
-	    erlang:display(UserName),
-	    erlang:display(CharBegin),
-            % This doesn't do anything, but you could use this operation if needed.
-            Sender ! {self(), logged_in},
-            server_actor(Users, CharBegin, CharEnd);
+	    erlang:display("Trying to log in ..." ),
+	    erlang:display(UserName), 
+            {user, Name, Subscriptions, Messages, NewServer} = get_user(UserName, Users),
+		
+	    if NewServer == undefined ->
+		       Sender ! {self(), logged_in},
+		       server_actor(Users, CharBegin, CharEnd);
+	    true ->    Sender ! {NewServer, logged_in},
+	       	       NewUsers = orddict:erase(UserName, Users),		
+	               server_actor(NewUsers, CharBegin, CharEnd) end;
 
-        {Sender, follow, UserName, UserNameToFollow} ->
+            % This doesn't do anything, but you could use this operation if needed.
+          
+        {Sender, follow, UserName, UserNameToFollow} -> 
             NewUsers = follow(Users, UserName, UserNameToFollow),
             Sender ! {self(), followed},
             server_actor(NewUsers, CharBegin, CharEnd);
@@ -133,30 +160,30 @@ server_actor(Users, CharBegin, CharEnd) ->
 
 % Create a new user with `UserName`.
 create_user(UserName) ->
-    {user, UserName, sets:new(), []}.
+    {user, UserName, sets:new(), [], undefined}.
 
 % Get user with `UserName` in `Users`.
 % Throws an exception if user does not exist (to help in debugging).
 % In your project, you do not need specific error handling for users that do not exist;
 % you can assume that all users that use the system exist.
 get_user(UserName, Users) ->
-    case dict:find(UserName, Users) of
+    case orddict:find(UserName, Users) of
         {ok, User} -> User;
         error -> throw({user_not_found, UserName})
     end.
 
 % Update `Users` so `UserName` follows `UserNameToFollow`.
 follow(Users, UserName, UserNameToFollow) ->
-    {user, Name, Subscriptions, Messages} = get_user(UserName, Users),
-    NewUser = {user, Name, sets:add_element(UserNameToFollow, Subscriptions), Messages},
-    dict:store(UserName, NewUser, Users).
+    {user, Name, Subscriptions, Messages, Server} = get_user(UserName, Users),
+    NewUser = {user, Name, sets:add_element(UserNameToFollow, Subscriptions), Messages, Server},
+    orddict:store(UserName, NewUser, Users).
 
 % Modify `Users` to store `Message`.
 store_message(Users, Message) ->
     {message, UserName, _MessageText, _Timestamp} = Message,
-    {user, Name, Subscriptions, Messages} = get_user(UserName, Users),
-    NewUser = {user, Name, Subscriptions, Messages ++ [Message]},
-    dict:store(UserName, NewUser, Users).
+    {user, Name, Subscriptions, Messages, Server} = get_user(UserName, Users),
+    NewUser = {user, Name, Subscriptions, Messages ++ [Message], Server},
+    orrdict:store(UserName, NewUser, Users).
 
 % Get all messages by `UserName`.
 get_messages(Users, UserName) ->
@@ -200,6 +227,9 @@ register_user_test() -> %register is sequential, but all the rest of the request
     erlang:display("Registering users..."),
     initialize_test(),
 
+
+    UserNames = ["A", "B", "C", "D", "W", "X", "Y", "Z"],
+
     UserName1 = "A",
     UserName2 = "B", 
     UserName3 = "C", 
@@ -208,7 +238,6 @@ register_user_test() -> %register is sequential, but all the rest of the request
     UserName6 = "X",
     UserName7 = "Y",
     UserName8 = "Z",
-
 
     {Server1, Response1} = server:register_user(server_actor, UserName1),
     {Server2, Response2} = server:register_user(server_actor, UserName2),
@@ -219,6 +248,15 @@ register_user_test() -> %register is sequential, but all the rest of the request
     {Server7, Response7} = server:register_user(server_actor, UserName7),
     {Server8, Response8} = server:register_user(server_actor, UserName8),
 
+    erlang:display(Server1),
+    erlang:display(Server2),
+    erlang:display(Server3),
+    erlang:display(Server4),
+    erlang:display(Server5),
+    erlang:display(Server6),
+    erlang:display(Server7),
+    erlang:display(Server8),
+
 
     ?assertMatch(user_registered, Response1),
     ?assertMatch(user_registered, Response2),
@@ -228,17 +266,26 @@ register_user_test() -> %register is sequential, but all the rest of the request
     ?assertMatch(user_registered, Response6),
     ?assertMatch(user_registered, Response7),
     ?assertMatch(user_registered, Response8),
-     [UserName1, Server1, UserName2, Server2, UserName3, Server3, UserName4, Server4, UserName5, Server5, UserName6, Server6, UserName7, Server7, UserName8, Server8].
+    erlang:display("Users succesfully registered: "),
+    [UserName1, Server1, UserName2, Server2, UserName3, Server3, UserName4, Server4, UserName5, Server5, UserName6, Server6, UserName7, Server7, UserName8, Server8].
+
     % Test log in.
 log_in_test() ->
     erlang:display("Logging in users..."),
     [UserName1, Server1, UserName2, Server2, UserName3, Server3, UserName4, Server4, UserName5, Server5, UserName6, Server6, UserName7, Server7, UserName8, Server8 | _] = register_user_test(),
-    LoggedInUser1 = server:log_in(Server1, UserName1),
-    erlang:display(LoggedInUser1),
-    LoggedInUser6 = server:log_in(Server8, UserName8),
-    erlang:display(LoggedInUser6),
-    ?assertMatch({_Server1, logged_in}, LoggedInUser1),
-    ?assertMatch({_Server2, logged_in}, LoggedInUser6).
+    erlang:display(Server1),
+    erlang:display(UserName1),
+   
+   
+
+    {NewServer1, Response1} = server:log_in(Server1, UserName1),
+    {NewServer5, Response5} = server:log_in(Server5, UserName5),
+    {NewServer8, Response8} = server:log_in(Server8, UserName8),
+
+    ?assertMatch(logged_in, Response1),
+    ?assertMatch(logged_in, Response5),
+    ?assertMatch(logged_in, Response8),
+    [UserName1, NewServer1, UserName5, NewServer5, UserName8, NewServer8].
   
     % Note: returned pids _Server1 and _Server2 do not necessarily need to be
     % the same.
@@ -246,14 +293,17 @@ log_in_test() ->
 % Test follow: user 1 will follow 2 and 3.
 follow_test() ->
     erlang:display("Following users ..."),
-    [UserName1, UserName2, UserName3 | _ ] = register_user_test(),
-    {Server1, logged_in} = server:log_in(server_actor, UserName1),
-    ?assertMatch(followed, server:follow(Server1, UserName1, UserName2)),
-    ?assertMatch(followed, server:follow(Server1, UserName1, UserName3)),
-    {UserName1, Server1, [UserName2, UserName3]}.
+    [UserName1, NewServer1, UserName5, NewServer5, UserName8, NewServer8 | _] =  log_in_test(),
+
+
+    ?assertMatch(followed, server:follow(NewServer1, UserName1, UserName5)),
+    ?assertMatch(followed, server:follow(NewServer1, UserName1, UserName8)),
+    ?assertMatch(followed, server:follow(NewServer5, UserName5, UserName8)),
+    {UserName1, NewServer1, [UserName5, UserName8]}.
 
 % Test sending a message.
 send_message_test() ->
+    erlang:display("Messaging users ..."),
     {UserName1, Server1, Subscriptions} = follow_test(),
     ?assertMatch(message_sent,
         server:send_message(Server1, UserName1, "Hello!")),

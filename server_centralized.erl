@@ -98,6 +98,7 @@ get_user(UserName, Users) ->
 
 % Update `Users` so `UserName` follows `UserNameToFollow`.
 follow(Users, UserName, UserNameToFollow) ->
+    %TODO: fix error 
     {user, Name, Subscriptions, Messages} = get_user(UserName, Users),
     NewUser = {user, Name, sets:add_element(UserNameToFollow, Subscriptions), Messages},
     dict:store(UserName, NewUser, Users).
