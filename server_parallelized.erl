@@ -70,7 +70,8 @@ server_actor(Users, CharBegin, CharEnd) ->
 					        %laat user nog staan tot als de user een nieuwe message stuurt en de nieuwe server terug krijgt 	
 						Condition %TODO: test later of the current user deleted is 
 				end,
-		       ReversedFilter = fun(K, V) -> not Filter(K, V) end,
+		       ReversedFilter = fun(K, V) -> not Filter(K, V) 
+					end,
 
 		      
 			%TODO: make sure that if you have multiple with same starting letter that it somtimes also looks further than the first charachter 
