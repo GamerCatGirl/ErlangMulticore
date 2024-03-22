@@ -11,6 +11,7 @@
 -export([register_user/2,
          log_in/2,
          follow/3,
+	 follow/4,
          get_timeline/2,
          get_profile/2,
          send_message/3]).
@@ -47,6 +48,14 @@ log_in(ServerPid, UserName) ->
 -spec follow(pid(), string(), string()) -> followed.
 follow(ServerPid, UserName, UserNameToFollow) ->
     ServerPid ! {self(), follow, UserName, UserNameToFollow},
+    receive
+        {_ResponsePid, followed} -> followed
+    end.
+
+% Follow parallel another user 
+-spec follow(pid(), string(), pid(), string()) -> followed.
+follow(ServerPid, UserName, ServerToFollow, UserNameToFollow) ->
+    ServerPid ! {self(), follow, UserName, UserNameToFollow, ServerToFollow},
     receive
         {_ResponsePid, followed} -> followed
     end.

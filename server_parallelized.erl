@@ -122,8 +122,6 @@ server_actor(Users, CharBegin, CharEnd) ->
            % server_actor(NewUsers);
 
         {Sender, log_in, UserName} ->
-	    erlang:display("Trying to log in ..." ),
-	    erlang:display(UserName), 
             {user, Name, Subscriptions, Messages, NewServer} = get_user(UserName, Users),
 		
 	    if NewServer == undefined ->
@@ -135,8 +133,9 @@ server_actor(Users, CharBegin, CharEnd) ->
 
             % This doesn't do anything, but you could use this operation if needed.
           
-        {Sender, follow, UserName, UserNameToFollow} -> 
-            NewUsers = follow(Users, UserName, UserNameToFollow),
+        {Sender, follow, UserName, UserNameToFollow, ServerToFollow} ->
+	    erlang:display("Folllowing user in parallel"),
+            NewUsers = follow(Users, UserName, UserNameToFollow, ServerToFollow),
             Sender ! {self(), followed},
             server_actor(NewUsers, CharBegin, CharEnd);
 
@@ -179,13 +178,23 @@ follow(Users, UserName, UserNameToFollow) ->
     NewUser = {user, Name, sets:add_element(UserNameToFollow, Subscriptions), Messages, Server},
     orddict:store(UserName, NewUser, Users).
 
+follow(Users, UserName, UserNameToFollow, ServerToFollow) ->
+    {user, Name, Subscriptions, Messages, Server} = get_user(UserName, Users),
+    NewUser = {user, Name, sets:add_element({UserNameToFollow, ServerToFollow}, Subscriptions), Messages, Server},
+    erlang:display(NewUser),
+    orddict:store(UserName, NewUser, Users).
+
+
 % Modify `Users` to store `Message`.
 store_message(Users, Message) ->
+    erlang:display("storing messages"),
     {message, UserName, _MessageText, _Timestamp} = Message,
     {user, Name, Subscriptions, Messages, Server} = get_user(UserName, Users),
     NewUser = {user, Name, Subscriptions, Messages ++ [Message], Server},
-    orrdict:store(UserName, NewUser, Users).
-
+    erlang:display(UserName),
+    erlang:display(NewUser),
+    orddict:store(UserName, NewUser, Users).
+ 
 % Get all messages by `UserName`.
 get_messages(Users, UserName) ->
     {user, _, _, Messages} = get_user(UserName, Users),
@@ -297,19 +306,20 @@ follow_test() ->
     [UserName1, NewServer1, UserName5, NewServer5, UserName8, NewServer8 | _] =  log_in_test(),
 
 
-    ?assertMatch(followed, server:follow(NewServer1, UserName1, UserName5)),
-    ?assertMatch(followed, server:follow(NewServer1, UserName1, UserName8)),
-    ?assertMatch(followed, server:follow(NewServer5, UserName5, UserName8)),
-    {UserName1, NewServer1, [UserName5, UserName8]}.
+    ?assertMatch(followed, server:follow(NewServer1, UserName1, NewServer5, UserName5)),
+    ?assertMatch(followed, server:follow(NewServer1, UserName1, NewServer8, UserName8)),
+    ?assertMatch(followed, server:follow(NewServer5, UserName5, NewServer8, UserName8)),
+    {UserName1, NewServer1, [UserName5, NewServer5, UserName8, NewServer8]}.
 
 % Test sending a message.
 send_message_test() ->
     erlang:display("Messaging users ..."),
     {UserName1, Server1, Subscriptions} = follow_test(),
-    ?assertMatch(message_sent,
-        server:send_message(Server1, UserName1, "Hello!")),
-    ?assertMatch(message_sent,
-        server:send_message(Server1, UserName1, "How is everyone?")),
+    Response1 = server:send_message(Server1, UserName1, "Hello!"),
+    Response2 = server:send_message(Server1, UserName1, "How is everyone?"),
+
+    ?assertMatch(message_sent, Response1),
+    ?assertMatch(message_sent, Response2),
     {UserName1, Server1, Subscriptions}.
 
 % Test getting a timeline.
