@@ -1,0 +1,92 @@
+Parameters:
+
+Starting benchmark fib: 1
+Wall clock time = 138.292 ms
+fib done
+Starting benchmark fib: 2
+Wall clock time = 137.758 ms
+fib done
+Starting benchmark fib: 3
+Wall clock time = 141.474 ms
+fib done
+Starting benchmark fib: 4
+Wall clock time = 140.161 ms
+fib done
+Starting benchmark fib: 5
+Wall clock time = 140.619 ms
+fib done
+Starting benchmark fib: 6
+Wall clock time = 135.151 ms
+fib done
+Starting benchmark fib: 7
+Wall clock time = 141.263 ms
+fib done
+Starting benchmark fib: 8
+Wall clock time = 140.331 ms
+fib done
+Starting benchmark fib: 9
+Wall clock time = 141.99 ms
+fib done
+Starting benchmark fib: 10
+Wall clock time = 140.867 ms
+fib done
+Starting benchmark fib: 11
+Wall clock time = 141.35 ms
+fib done
+Starting benchmark fib: 12
+Wall clock time = 142.07 ms
+fib done
+Starting benchmark fib: 13
+Wall clock time = 140.685 ms
+fib done
+Starting benchmark fib: 14
+Wall clock time = 139.186 ms
+fib done
+Starting benchmark fib: 15
+Wall clock time = 139.431 ms
+fib done
+Starting benchmark fib: 16
+Wall clock time = 139.532 ms
+fib done
+Starting benchmark fib: 17
+Wall clock time = 136.837 ms
+fib done
+Starting benchmark fib: 18
+Wall clock time = 138.638 ms
+fib done
+Starting benchmark fib: 19
+Wall clock time = 137.983 ms
+fib done
+Starting benchmark fib: 20
+Wall clock time = 136.794 ms
+fib done
+Starting benchmark fib: 21
+Wall clock time = 140.402 ms
+fib done
+Starting benchmark fib: 22
+Wall clock time = 140.39 ms
+fib done
+Starting benchmark fib: 23
+Wall clock time = 138.74 ms
+fib done
+Starting benchmark fib: 24
+Wall clock time = 137.979 ms
+fib done
+Starting benchmark fib: 25
+Wall clock time = 140.425 ms
+fib done
+Starting benchmark fib: 26
+Wall clock time = 141.125 ms
+fib done
+Starting benchmark fib: 27
+Wall clock time = 137.015 ms
+fib done
+Starting benchmark fib: 28
+Wall clock time = 141.047 ms
+fib done
+Starting benchmark fib: 29
+Wall clock time = 140.952 ms
+fib done
+Starting benchmark fib: 30
+Wall clock time = 140.251 ms
+fib done

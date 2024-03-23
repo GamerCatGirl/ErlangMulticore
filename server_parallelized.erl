@@ -44,7 +44,7 @@ initialize_with(Users, CharBegin, CharEnd) ->
 %
 %Client to server 
 server_actor(Users, CharBegin, CharEnd) ->
-    TreshHoldUsers = 5, %differ this to test the parallel process 
+    TreshHoldUsers = 500, %differ this to test the parallel process 
     receive
 % When message received, spawn new 
         {Sender, register_user, UserName} ->

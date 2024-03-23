@@ -1,0 +1,15 @@
+Parameters:
+Number of users: 5000
+Number of subscriptions: 25
+Number of messages: 10
+
+Starting benchmark timeline: 1
+Wall clock time = 940.785 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 832.069 ms
+timeline done
+Starting benchmark timeline: 3
+
+BREAK: (a)bort (A)bort with dump (c)ontinue (p)roc info (i)nfo
+       (l)oaded (v)ersion (k)ill (D)b-tables (d)istribution

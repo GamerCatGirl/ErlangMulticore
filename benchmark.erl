@@ -115,7 +115,9 @@ initialize_server() ->
         {Name, User} % {key, value} for dict.
         end,
         UserNames)),
-    ServerPid = server_centralized:initialize_with(Users),
+    %ServerPid = server_centralized:initialize_with(Users),
+    ServerPid = server_paralized:initialize_with(Users),
+    erlang:display("Server initialized"),
     {ServerPid, UserNames}.
 
 % Pick a random element from a list.
