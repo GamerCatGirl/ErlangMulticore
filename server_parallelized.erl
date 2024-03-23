@@ -134,7 +134,7 @@ server_actor(Users, CharBegin, CharEnd) ->
             % This doesn't do anything, but you could use this operation if needed.
           
         {Sender, follow, UserName, UserNameToFollow, ServerToFollow} ->
-	    erlang:display("Folllowing user in parallel"),
+
             NewUsers = follow(Users, UserName, UserNameToFollow, ServerToFollow),
             Sender ! {self(), followed},
             server_actor(NewUsers, CharBegin, CharEnd);
@@ -174,7 +174,6 @@ create_user(UserName) ->
 get_user(UserName, Users) ->
     case orddict:find(UserName, Users) of
         {ok, User} -> 
-		erlang:display(User),
 		    User;
         error -> throw({user_not_found, UserName})
     end.
@@ -188,18 +187,17 @@ follow(Users, UserName, UserNameToFollow) ->
 follow(Users, UserName, UserNameToFollow, ServerToFollow) ->
     {user, Name, Subscriptions, Messages, Server} = get_user(UserName, Users),
     NewUser = {user, Name, sets:add_element({UserNameToFollow, ServerToFollow}, Subscriptions), Messages, Server},
-    erlang:display(NewUser),
+
     orddict:store(UserName, NewUser, Users).
 
 
 % Modify `Users` to store `Message`.
 store_message(Users, Message) ->
-    erlang:display("storing messages"),
+
     {message, UserName, _MessageText, _Timestamp} = Message,
     {user, Name, Subscriptions, Messages, Server} = get_user(UserName, Users),
     NewUser = {user, Name, Subscriptions, Messages ++ [Message], Server},
-    erlang:display(UserName),
-    erlang:display(NewUser),
+
     orddict:store(UserName, NewUser, Users).
  
 % Get all messages by `UserName`.
@@ -209,19 +207,17 @@ get_messages(Users, UserName) ->
 
 % Generate timeline for `UserName`.
 timeline(Users, UserName) ->
-	erlang:display("in timeline ..."),
+
     {user, _, Subscriptions, _, _} = get_user(UserName, Users),
-    erlang:display(Subscriptions),
+
     UnsortedMessagesForTimeLine =
         lists:foldl(fun({FollowedUserName, ServerFollower}, AllMessages) ->
-			erlang:display(FollowedUserName),
-			erlang:display(ServerFollower),
+
 			
 			Messages = if ServerFollower == self() ->
 				   	get_messages(Users, FollowedUserName);
 				   true -> server:get_messages(ServerFollower, FollowedUserName) end,
 
-			erlang:display(Messages),
 		        AllMessages ++ get_messages(Users, FollowedUserName)
                     end,
                     [],
@@ -251,7 +247,6 @@ initialize_test() ->
 % Returns list of user names to be used in subsequent tests.
 register_user_test() -> %register is sequential, but all the rest of the requests are in parallel
     io:write("Registering users..."),
-    erlang:display("Registering users..."),
     initialize_test(),
 
 
@@ -275,15 +270,6 @@ register_user_test() -> %register is sequential, but all the rest of the request
     {Server7, Response7} = server:register_user(server_actor, UserName7),
     {Server8, Response8} = server:register_user(server_actor, UserName8),
 
-    erlang:display(Server1),
-    erlang:display(Server2),
-    erlang:display(Server3),
-    erlang:display(Server4),
-    erlang:display(Server5),
-    erlang:display(Server6),
-    erlang:display(Server7),
-    erlang:display(Server8),
-
 
     ?assertMatch(user_registered, Response1),
     ?assertMatch(user_registered, Response2),
@@ -293,17 +279,13 @@ register_user_test() -> %register is sequential, but all the rest of the request
     ?assertMatch(user_registered, Response6),
     ?assertMatch(user_registered, Response7),
     ?assertMatch(user_registered, Response8),
-    erlang:display("Users succesfully registered: "),
+
     [UserName1, Server1, UserName2, Server2, UserName3, Server3, UserName4, Server4, UserName5, Server5, UserName6, Server6, UserName7, Server7, UserName8, Server8].
 
     % Test log in.
 log_in_test() ->
-    erlang:display("Logging in users..."),
+  
     [UserName1, Server1, UserName2, Server2, UserName3, Server3, UserName4, Server4, UserName5, Server5, UserName6, Server6, UserName7, Server7, UserName8, Server8 | _] = register_user_test(),
-    erlang:display(Server1),
-    erlang:display(UserName1),
-   
-   
 
     {NewServer1, Response1} = server:log_in(Server1, UserName1),
     {NewServer5, Response5} = server:log_in(Server5, UserName5),
@@ -319,7 +301,7 @@ log_in_test() ->
 
 % Test follow: user 1 will follow 2 and 3.
 follow_test() ->
-    erlang:display("Following users ..."),
+
     [UserName1, NewServer1, UserName5, NewServer5, UserName8, NewServer8 | _] =  log_in_test(),
 
 
@@ -330,7 +312,7 @@ follow_test() ->
 
 % Test sending a message.
 send_message_test() ->
-    erlang:display("Messaging users ..."),
+   
     {UserName1, Server1, Subscriptions} = follow_test(),
     Response1 = server:send_message(Server1, UserName1, "Hello!"),
     Response2 = server:send_message(Server1, UserName1, "How is everyone?"),
@@ -343,9 +325,8 @@ send_message_test() ->
 get_timeline_test() ->
     {UserName1, Server1, [UserName5, Server5, UserName8, Server8]} = follow_test(),
 
-    erlang:display("TimeLineTest ----------------------------------"),
     TimeLine1 = server:get_timeline(Server1, UserName1),
-    erlang:display(TimeLine1),
+  
     % When nothing has been sent, the timeline is empty.
     ?assertMatch([], TimeLine1),
 
@@ -371,11 +352,13 @@ get_timeline_test() ->
 
     % User 2 does not follow any so gets an empty timeline.
     TimeLine9 = server:get_timeline(Server5, UserName5),
-    erlang:display(TimeLine9),
+
     ?assertMatch([], server:get_timeline(Server5, UserName5)).
+   
 
 % Test getting the profile.
 get_profile_test() ->
+  
     {UserName1, Server1, [UserName2 | _]} = send_message_test(),
     % Most recent message is returned first.
     ?assertMatch([
@@ -384,10 +367,13 @@ get_profile_test() ->
     ], server:get_profile(Server1, UserName1)),
     % User 2 hasn't sent any messages.
     ?assertMatch([], server:get_profile(Server1, UserName2)).
+    
 
 % A "typical" session.
 typical_session_test() ->
     initialize_test(),
+    CharBegin = 32,
+    CharEnd = 126,
     Session1 = spawn_link(?MODULE, typical_session_1, [self()]),
     Session2 = spawn_link(?MODULE, typical_session_2, [self()]),
     receive
@@ -399,29 +385,41 @@ typical_session_test() ->
     end.
 
 typical_session_1(TesterPid) ->
-    {_, user_registered} = server:register_user(server_actor, "Alice"),
-    {Server, logged_in} = server:log_in(server_actor, "Alice"),
+
+    RegisterUser = server:register_user(server_actor, "Alice"),
+
+    {ServerA, user_registered} = RegisterUser,
+    LoggedInUser = server:log_in(ServerA, "Alice"),
+    {Server, logged_in} = LoggedInUser, 
     message_sent = server:send_message(Server, "Alice", "Hello!"),
     message_sent = server:send_message(Server, "Alice", "How is everyone?"),
+  
     % Check own profile
     [{message, "Alice", "How is everyone?", Time2},
      {message, "Alice", "Hello!", Time1}] =
-        server:get_profile(Server, "Alice"),
+        server:get_profile(ServerA, "Alice"),
+
     ?assert(Time1 =< Time2),
+   
     TesterPid ! {self(), ok}.
 
 typical_session_2(TesterPid) ->
-    {_, user_registered} = server:register_user(server_actor, "Bob"),
-    {Server, logged_in} = server:log_in(server_actor, "Bob"),
+ 
+    {ServerB, user_registered} = server:register_user(server_actor, "Bob"),
+    {Server, logged_in} = server:log_in(ServerB, "Bob"),
 
     % Sleep one second, while Alice sends messages.
     timer:sleep(1000),
 
     [] = server:get_timeline(Server, "Bob"),
-    followed = server:follow(Server, "Bob", "Alice"),
+ 
+    followed = server:follow(Server, "Bob", Server, "Alice"),
+ 
+    TimeLine = server:get_timeline(Server, "Bob"),
+ 
     [{message, "Alice", "How is everyone?", Time2},
      {message, "Alice", "Hello!", Time1}] =
-        server:get_timeline(Server, "Bob"),
+        TimeLine,
     ?assert(Time1 =< Time2),
 
     TesterPid ! {self(), ok}.
