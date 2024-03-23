@@ -14,6 +14,7 @@
 	 follow/4,
          get_timeline/2,
          get_profile/2,
+	 get_messages/2,
          send_message/3]).
 
 %%
@@ -69,6 +70,16 @@ send_message(ServerPid, UserName, MessageText) ->
         {_ResponsePid, message_sent} ->
             message_sent
     end.
+
+
+% Get messages of a user 
+-spec get_messages(pid(), string()) -> message_received.
+get_messages(ServerPid, UserName) ->
+	ServerPid ! {self(), get_messages, UserName},
+	receive
+		{_ResponsePid, message_received, Messages} ->
+			Messages
+	end.
 
 % Request the timeline of a user.
 -spec get_timeline(pid(), string()) -> [{message, integer(), erlang:timestamp(), string()}].

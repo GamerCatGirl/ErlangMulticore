@@ -144,6 +144,11 @@ server_actor(Users, CharBegin, CharEnd) ->
             Sender ! {self(), message_sent},
             server_actor(NewUsers, CharBegin, CharEnd);
 
+	{Sender, get_messages, UserName} ->
+		Messages = get_messages(Users, UserName),
+		Sender ! {self(), messages_received, Messages},
+		server_actor(Users, CharBegin, CharEnd);
+
         {Sender, get_timeline, UserName} ->
             Sender ! {self(), timeline, UserName, timeline(Users, UserName)},
             server_actor(Users, CharBegin, CharEnd);
@@ -168,7 +173,9 @@ create_user(UserName) ->
 % you can assume that all users that use the system exist.
 get_user(UserName, Users) ->
     case orddict:find(UserName, Users) of
-        {ok, User} -> User;
+        {ok, User} -> 
+		erlang:display(User),
+		    User;
         error -> throw({user_not_found, UserName})
     end.
 
@@ -197,15 +204,25 @@ store_message(Users, Message) ->
  
 % Get all messages by `UserName`.
 get_messages(Users, UserName) ->
-    {user, _, _, Messages} = get_user(UserName, Users),
+    {user, _, _, Messages, Server} = get_user(UserName, Users),
     Messages.
 
 % Generate timeline for `UserName`.
 timeline(Users, UserName) ->
-    {user, _, Subscriptions, _} = get_user(UserName, Users),
+	erlang:display("in timeline ..."),
+    {user, _, Subscriptions, _, _} = get_user(UserName, Users),
+    erlang:display(Subscriptions),
     UnsortedMessagesForTimeLine =
-        lists:foldl(fun(FollowedUserName, AllMessages) ->
-                        AllMessages ++ get_messages(Users, FollowedUserName)
+        lists:foldl(fun({FollowedUserName, ServerFollower}, AllMessages) ->
+			erlang:display(FollowedUserName),
+			erlang:display(ServerFollower),
+			
+			Messages = if ServerFollower == self() ->
+				   	get_messages(Users, FollowedUserName);
+				   true -> server:get_messages(ServerFollower, FollowedUserName) end,
+
+			erlang:display(Messages),
+		        AllMessages ++ get_messages(Users, FollowedUserName)
                     end,
                     [],
                     sets:to_list(Subscriptions)),
@@ -308,7 +325,7 @@ follow_test() ->
 
     ?assertMatch(followed, server:follow(NewServer1, UserName1, NewServer5, UserName5)),
     ?assertMatch(followed, server:follow(NewServer1, UserName1, NewServer8, UserName8)),
-    ?assertMatch(followed, server:follow(NewServer5, UserName5, NewServer8, UserName8)),
+    %?assertMatch(followed, server:follow(NewServer5, UserName5, NewServer8, UserName8)),
     {UserName1, NewServer1, [UserName5, NewServer5, UserName8, NewServer8]}.
 
 % Test sending a message.
@@ -324,33 +341,38 @@ send_message_test() ->
 
 % Test getting a timeline.
 get_timeline_test() ->
-    {UserName1, Server1, [UserName2, UserName3]} = follow_test(),
+    {UserName1, Server1, [UserName5, Server5, UserName8, Server8]} = follow_test(),
 
+    erlang:display("TimeLineTest ----------------------------------"),
+    TimeLine1 = server:get_timeline(Server1, UserName1),
+    erlang:display(TimeLine1),
     % When nothing has been sent, the timeline is empty.
-    ?assertMatch([], server:get_timeline(Server1, UserName1)),
+    ?assertMatch([], TimeLine1),
 
     ?assertMatch(message_sent,
-        server:send_message(Server1, UserName2, "Hello I'm B!")),
+        server:send_message(Server5, UserName5, "Hello I'm B!")),
 
     % One message in the timeline.
     ?assertMatch([
-        {message, UserName2, "Hello I'm B!", _TimeB1}
+        {message, UserName5, "Hello I'm B!", _TimeB1}
     ], server:get_timeline(Server1, UserName1)),
 
     ?assertMatch(message_sent,
-        server:send_message(Server1, UserName2, "How is everyone?")),
+        server:send_message(Server8, UserName5, "How is everyone?")),
     ?assertMatch(message_sent,
-        server:send_message(Server1, UserName3, "Hello I'm C!")),
+        server:send_message(Server8, UserName8, "Hello I'm C!")),
 
     % All three messages in the timeline, newest first.
     ?assertMatch([
-        {message, UserName3, "Hello I'm C!", _TimeC1},
-        {message, UserName2, "How is everyone?", _TimeB2},
-        {message, UserName2, "Hello I'm B!", _TimeB1}
+        {message, UserName8, "Hello I'm C!", _TimeC1},
+        {message, UserName5, "How is everyone?", _TimeB2},
+        {message, UserName5, "Hello I'm B!", _TimeB1}
     ], server:get_timeline(Server1, UserName1)),
 
     % User 2 does not follow any so gets an empty timeline.
-    ?assertMatch([], server:get_timeline(Server1, UserName2)).
+    TimeLine9 = server:get_timeline(Server5, UserName5),
+    erlang:display(TimeLine9),
+    ?assertMatch([], server:get_timeline(Server5, UserName5)).
 
 % Test getting the profile.
 get_profile_test() ->

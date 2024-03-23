@@ -1,92 +1,92 @@
 Parameters:
 
 Starting benchmark fib: 1
-Wall clock time = 828.334 ms
+Wall clock time = 835.044 ms
 fib done
 Starting benchmark fib: 2
-Wall clock time = 819.666 ms
+Wall clock time = 841.208 ms
 fib done
 Starting benchmark fib: 3
-Wall clock time = 821.952 ms
+Wall clock time = 841.369 ms
 fib done
 Starting benchmark fib: 4
-Wall clock time = 815.382 ms
+Wall clock time = 823.36 ms
 fib done
 Starting benchmark fib: 5
-Wall clock time = 835.96 ms
+Wall clock time = 831.784 ms
 fib done
 Starting benchmark fib: 6
-Wall clock time = 816.807 ms
+Wall clock time = 842.464 ms
 fib done
 Starting benchmark fib: 7
-Wall clock time = 851.075 ms
+Wall clock time = 808.834 ms
 fib done
 Starting benchmark fib: 8
-Wall clock time = 827.387 ms
+Wall clock time = 844.907 ms
 fib done
 Starting benchmark fib: 9
-Wall clock time = 828.541 ms
+Wall clock time = 842.931 ms
 fib done
 Starting benchmark fib: 10
-Wall clock time = 795.661 ms
+Wall clock time = 815.656 ms
 fib done
 Starting benchmark fib: 11
-Wall clock time = 853.177 ms
+Wall clock time = 775.751 ms
 fib done
 Starting benchmark fib: 12
-Wall clock time = 849.886 ms
+Wall clock time = 829.397 ms
 fib done
 Starting benchmark fib: 13
-Wall clock time = 828.665 ms
+Wall clock time = 797.713 ms
 fib done
 Starting benchmark fib: 14
-Wall clock time = 843.933 ms
+Wall clock time = 827.016 ms
 fib done
 Starting benchmark fib: 15
-Wall clock time = 816.911 ms
+Wall clock time = 802.823 ms
 fib done
 Starting benchmark fib: 16
-Wall clock time = 807.025 ms
+Wall clock time = 842.708 ms
 fib done
 Starting benchmark fib: 17
-Wall clock time = 803.032 ms
+Wall clock time = 829.006 ms
 fib done
 Starting benchmark fib: 18
-Wall clock time = 847.628 ms
+Wall clock time = 810.025 ms
 fib done
 Starting benchmark fib: 19
-Wall clock time = 868.309 ms
+Wall clock time = 800.137 ms
 fib done
 Starting benchmark fib: 20
-Wall clock time = 837.678 ms
+Wall clock time = 824.917 ms
 fib done
 Starting benchmark fib: 21
-Wall clock time = 848.381 ms
+Wall clock time = 824.217 ms
 fib done
 Starting benchmark fib: 22
-Wall clock time = 788.723 ms
+Wall clock time = 860.864 ms
 fib done
 Starting benchmark fib: 23
-Wall clock time = 810.749 ms
+Wall clock time = 785.135 ms
 fib done
 Starting benchmark fib: 24
-Wall clock time = 815.003 ms
+Wall clock time = 806.111 ms
 fib done
 Starting benchmark fib: 25
-Wall clock time = 811.728 ms
+Wall clock time = 807.483 ms
 fib done
 Starting benchmark fib: 26
-Wall clock time = 843.47 ms
+Wall clock time = 786.918 ms
 fib done
 Starting benchmark fib: 27
-Wall clock time = 823.023 ms
+Wall clock time = 821.511 ms
 fib done
 Starting benchmark fib: 28
-Wall clock time = 863.717 ms
+Wall clock time = 805.167 ms
 fib done
 Starting benchmark fib: 29
-Wall clock time = 843.588 ms
+Wall clock time = 793.211 ms
 fib done
 Starting benchmark fib: 30
-Wall clock time = 799.914 ms
+Wall clock time = 790.345 ms
 fib done
