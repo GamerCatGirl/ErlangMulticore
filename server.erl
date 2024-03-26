@@ -13,6 +13,8 @@
          follow/3,
 	 follow/4,
          get_timeline/2,
+	 printServer/1,
+	 setup/1,
          get_profile/2,
 	 get_messages/2,
          send_message/3]).
@@ -20,6 +22,23 @@
 %%
 %% Server API
 %%
+
+-spec setup(pid()) -> {pid(), setup_completed}.
+setup(ServerPid) ->
+	ServerPid ! {self(), setup},
+	receive
+		{ResponsePid, setup_completed} ->
+			{ResponsePid, setup_completed}
+	end.
+
+
+-spec printServer(pid()) -> {pid(), printed}.
+printServer(ServerPid) ->
+	ServerPid ! {self(), print},
+	receive
+		{ResponsePid, printed} ->
+			{ResponsePid, printed}
+	end.
 
 % Register a new user.
 %
