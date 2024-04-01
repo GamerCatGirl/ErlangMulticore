@@ -119,8 +119,8 @@ newFollower(UserName, UserNameToFollow, RedirectServer) ->
 	end.
 
 follow(Users, UserName, UserNameToFollow, ServerToFollow) ->
-    {user, Name, Subscriptions, Messages, Followers} = get_user(UserName, Users),
-    NewSubscriptions = orddict:store(UserNameToFollow, {ServerToFollow, []}, Subscriptions),
+    {user, Name, TimeLine, Messages, Followers} = get_user(UserName, Users),
+    NewSubscriptions = orddict:store(UserNameToFollow, {ServerToFollow, []}, TimeLine),
     NewUser = {user, Name, NewSubscriptions, Messages, Followers},
     orddict:store(UserName, NewUser, Users).
 
@@ -149,10 +149,10 @@ server_actor(Users, RedirectServer) ->
             server_actor(Users, RedirectServer);
 
         {Sender, follow, UserName, UserNameToFollow} ->
-            ServerIDFollowing = newFollower(UserName, UserNameToFollow, RedirectServer),
-            NewUsers = follow(Users, UserName, UserNameToFollow, ServerIDFollowing),
+            newFollower(UserName, UserNameToFollow, RedirectServer),
+            %NewUsers = follow(Users, UserName, UserNameToFollow, ServerIDFollowing),
             Sender ! {self(), followed},
-            server_actor(NewUsers, RedirectServer);
+            server_actor(Users, RedirectServer);
 
         {Sender, send_message, UserName, MessageText, Timestamp} ->
             NewUsers = store_message(Users, {message, UserName, MessageText, Timestamp}),
@@ -161,12 +161,20 @@ server_actor(Users, RedirectServer) ->
 
 
 	{Sender, receive_message, ToUsername, FromUsername, Message} ->
-		{user, ToUsername, Subscriptions, Messages, FollowedBy} = get_user(ToUsername, Users),
-		Subscription = orddict:fetch(FromUsername, Subscriptions),
-		{Server, OldMessages} = Subscription,
-		%TODO: save messages in an ordered dictionary on time so they don't need to be sorted -> sort takes lots of time  
-		NewSubscriptions = orddict:store(FromUsername, {Server, Message ++ OldMessages}, Subscriptions),
-		NewUser = {user, ToUsername, NewSubscriptions, Messages, FollowedBy},
+		{user, ToUsername, TimeLine, Messages, FollowedBy} = get_user(ToUsername, Users),
+
+		%save messages in an ordered dictionary on time so they don't need to be sorted -> sort takes lots of time
+		NewMessagesList = lists:map(fun(Elm) ->
+							    {message, _, _, T} = Elm,
+							    NegativeT = 0 - T, 
+							    {NegativeT, [Elm]} end
+						    , Message),
+
+		NewMessages = orddict:from_list(NewMessagesList),
+
+		NewTimeLine = orddict:merge(fun(_, V1, V2) -> V1 ++ V2 end, TimeLine, NewMessages),
+		
+		NewUser = {user, ToUsername, NewTimeLine, Messages, FollowedBy},
 		NewUsers = orddict:store(ToUsername, NewUser, Users),
 		server_actor(NewUsers, RedirectServer);
 
@@ -204,7 +212,7 @@ server_actor(Users, RedirectServer) ->
 
 % Create a new user with `UserName`.
 create_user(UserName) ->
-    %user, Username, Subscriptions, Messages, FollowedBy 
+    %user, Username, TimeLine, Messages, FollowedBy 
     {user, UserName, orddict:new(), [], sets:new()}. 
 
 % Get user with `UserName` in `Users`.
@@ -241,15 +249,11 @@ get_messages(Users, UserName) ->
 
 % Generate timeline for `UserName`.
 timeline(Users, UserName) ->
-    {user, _, Subscriptions, _, _} = get_user(UserName, Users),
+    {user, _, TimeLine, _, _} = get_user(UserName, Users),
 
-    UnsortedMessagesForTimeLine = 
-	orddict:fold(fun(_, {_, Messages}, AllMessages) ->
-				     AllMessages ++ Messages
-		     end,
-		     [],
-		     Subscriptions),
-    sort_messages(UnsortedMessagesForTimeLine).
+    ListTimeline = orddict:to_list(TimeLine),
+    FlattenTimeline = lists:flatmap(fun({_, V}) -> V end, ListTimeline),
+    FlattenTimeline.
 
 % Sort `Messages` from most recent to oldest.
 sort_messages(Messages) ->
