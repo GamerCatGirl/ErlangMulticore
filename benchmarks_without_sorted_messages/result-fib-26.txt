@@ -1,0 +1,92 @@
+Parameters:
+
+Starting benchmark fib: 1
+Wall clock time = 62.617 ms
+fib done
+Starting benchmark fib: 2
+Wall clock time = 58.088 ms
+fib done
+Starting benchmark fib: 3
+Wall clock time = 59.702 ms
+fib done
+Starting benchmark fib: 4
+Wall clock time = 60.741 ms
+fib done
+Starting benchmark fib: 5
+Wall clock time = 60.246 ms
+fib done
+Starting benchmark fib: 6
+Wall clock time = 61.528 ms
+fib done
+Starting benchmark fib: 7
+Wall clock time = 61.831 ms
+fib done
+Starting benchmark fib: 8
+Wall clock time = 59.617 ms
+fib done
+Starting benchmark fib: 9
+Wall clock time = 59.168 ms
+fib done
+Starting benchmark fib: 10
+Wall clock time = 59.726 ms
+fib done
+Starting benchmark fib: 11
+Wall clock time = 59.184 ms
+fib done
+Starting benchmark fib: 12
+Wall clock time = 59.325 ms
+fib done
+Starting benchmark fib: 13
+Wall clock time = 62.197 ms
+fib done
+Starting benchmark fib: 14
+Wall clock time = 62.066 ms
+fib done
+Starting benchmark fib: 15
+Wall clock time = 57.263 ms
+fib done
+Starting benchmark fib: 16
+Wall clock time = 60.9 ms
+fib done
+Starting benchmark fib: 17
+Wall clock time = 59.254 ms
+fib done
+Starting benchmark fib: 18
+Wall clock time = 59.68 ms
+fib done
+Starting benchmark fib: 19
+Wall clock time = 62.206 ms
+fib done
+Starting benchmark fib: 20
+Wall clock time = 58.937 ms
+fib done
+Starting benchmark fib: 21
+Wall clock time = 61.136 ms
+fib done
+Starting benchmark fib: 22
+Wall clock time = 61.641 ms
+fib done
+Starting benchmark fib: 23
+Wall clock time = 59.673 ms
+fib done
+Starting benchmark fib: 24
+Wall clock time = 61.273 ms
+fib done
+Starting benchmark fib: 25
+Wall clock time = 61.222 ms
+fib done
+Starting benchmark fib: 26
+Wall clock time = 61.879 ms
+fib done
+Starting benchmark fib: 27
+Wall clock time = 60.538 ms
+fib done
+Starting benchmark fib: 28
+Wall clock time = 61.164 ms
+fib done
+Starting benchmark fib: 29
+Wall clock time = 60.537 ms
+fib done
+Starting benchmark fib: 30
+Wall clock time = 61.576 ms
+fib done

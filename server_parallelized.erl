@@ -44,13 +44,34 @@ initialize_with(Users, CharBegin, CharEnd, PiDs) ->
 % Messages is a list of messages, of the form:
 %     {message, UserName, MessageText, SendTime}
 %
-%
-%
-%
+
+resend_message(UserName, UsersToBeReplaced) ->
+	 %If user is replaced while active loggin session
+    case orddict:find(UserName, UsersToBeReplaced) of 
+    	{ok, NewServer} ->  {true, NewServer};
+	error -> {false, 0}
+    end.
+
+
+
 %Client to server 
 server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced) ->
-    TreshHoldUsers = 5, %differ this to test the parallel process 
+    TreshHoldUsers = 5, %differ this to test the parallel process
+
+    %If user is replaced while active loggin session
+    %case orddict:find(UserName, UsersToBeReplaced) of 
+    %	{ok, NewServer} ->  NewServer ! {Sender, },
+    %	       	       	    NewUsersToBeReplaced = orddict:erase(UserName, UsersToBeReplaced),		
+    %	               	    server_actor(Users, CharBegin, CharEnd, PiDs, NewUsersToBeReplaced)
+
+   % end;
+
+
+
     receive
+
+	    %TODO: alsways check first if user should not send to different server
+	    %
 % When message received, spawn newest
         {Sender, print} ->
 		    erlang:display("PiD"),
@@ -109,25 +130,26 @@ server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced) ->
                        % Filter: get all where Filter is False (stay in current place)
                        MapServer = fun (K, V) ->
 					FirstChar = lists:nth(1, K), % Key eerste Character 
-					{user, Name, Subscriptions, Messages, Server} = V,
+					{user, Name, Subscriptions, Messages, Followers} = V,
 
 					if (FirstChar =< Split) -> NewPid;
-					true -> {user, Name, Subscriptions, Messages, Server} end 
+					true -> {user, Name, Subscriptions, Messages, Followers} end 
 			           end,
 		       UsersToBeReplacedWithoutNewPid = orddict:filter(Filter, NewUsers),
 		       UsersToBeReplacedNew = orddict:map(MapServer, UsersToBeReplacedWithoutNewPid),
 		
 		     
-                       UsersBigANSII = orddict:filter(ReversedFilter, NewUsers), %TODO: dont use filter but just delete possible current user and set the rest on the different server 
+                       UsersBigANSII = orddict:filter(ReversedFilter, NewUsers), 
 		     
                       
                         NewPids = orddict:store(Split, NewPid, PiDs),
 
 		     	if FirstCharUser =< Split ->
+				  
 						      
 				      UsersWithout = orddict:erase(UserName, UsersToBeReplaced), 
 				      Sender ! {NewPid, user_registered},
-				      server_actor(UsersWithout, Split + 1, CharEnd, NewPids, UsersToBeReplacedNew);
+				      server_actor(UsersBigANSII, Split + 1, CharEnd, NewPids, UsersToBeReplacedNew);
 			
 		       true ->	     
 				      Sender ! {self(), user_registered},
@@ -136,16 +158,21 @@ server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced) ->
 				   
 			end;
 		true ->
+
+		       %TODO: here still an issue !!!!!
+		      
 		       if (FirstCharUser < CharBegin) or (FirstCharUser > CharEnd) ->
-				 
 				   Key = getKeyServer(UserName, PiDs),
 				   {Response, Value} = orddict:find(Key, PiDs),
 				  % {ServerSend, Response} =
 			
 				   server:register_user(Value, UserName),
 			
-				   Sender ! {Value, user_registered};
-			true -> Sender ! {self(), user_registered} end,	  
+				   Sender ! {Value, user_registered},
+				   server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+			true -> Sender ! {self(), user_registered},
+			        server_actor(NewUsers, CharBegin, CharEnd, PiDs, UsersToBeReplaced)
+		       end
 
 		       %if ()
 
@@ -153,8 +180,7 @@ server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced) ->
 		       %Sender ! {self(), user_registered},
 
 		       %Activate the server_actor with NewUsers
-		       server_actor(NewUsers, CharBegin, CharEnd, PiDs, UsersToBeReplaced)
-	   end;
+			   end;
 	
 		       
            % server_actor(NewUsers);
@@ -162,8 +188,6 @@ server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced) ->
         {Sender, log_in, UserName} ->
 		    UserKeys = orddict:fetch_keys(Users),
 		 
-                    
-
 		   case orddict:find(UserName, Users) of
         		{ok, User} ->  
 				    Sender ! {self(), logged_in},
@@ -188,39 +212,120 @@ server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced) ->
      
             % This doesn't do anything, but you could use this operation if needed.
           
-        {Sender, follow, UserName, UserNameToFollow, ServerToFollow} ->
-		KeyUser = getKeyServer(UserNameToFollow, PiDs),
-	        {Response, Value} = orddict:find(KeyUser, PiDs), 
+        {Sender, follow, UserName, UserNameToFollow} ->
+	    {Replace, Server} = resend_message(UserName, UsersToBeReplaced),
+	    if Replace -> Server ! {Sender, follow, UserName, UserNameToFollow},
+			   server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+	    true -> 
 
+	    KeyUser = getKeyServer(UserNameToFollow, PiDs),
+	    {Response, Value} = orddict:find(KeyUser, PiDs), 
 
-
-	    %ServerToFollow = getServerUser(UserNameToFollow, PiDs),
-	    %erlang:display("Server To Follow: "),
-	    %erlang:display(ServerToFollow),	
-
-            NewUsers = follow(Users, UserName, UserNameToFollow, ServerToFollow),
+            NewUsers = follow(Users, UserName, UserNameToFollow, Value),
             Sender ! {self(), followed},
-            server_actor(NewUsers, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+            server_actor(NewUsers, CharBegin, CharEnd, PiDs, UsersToBeReplaced) end;
+
+	{Sender, newFollower, UserName, UserNameFollower} ->
+            {Replace, Server} = resend_message(UserName, UsersToBeReplaced),
+            if Replace -> Server ! {Sender, newFollow, UserName, UserNameFollower},
+			   server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+	    true -> 
+		    
+		    KeyUser = getKeyServer(UserName, PiDs),
+	            {Response, Value} = orddict:find(KeyUser, PiDs),
+
+		    if (Value == self()) ->
+			       NewUsers = save_follower(UserName, UserNameFollower, Sender, Users),
+			       Messages = get_messages(Users, UserName),
+			       Sender ! {self(), saveMessages, UserNameFollower, UserName, Messages},
+			       server_actor(NewUsers, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+			true -> Value ! {Sender, newFollower, UserName, UserNameFollower},
+				server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced)
+				
+		    end end;
+		    %server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+
+	{Sender, saveMessages, UserName, UserNameFollowing, Messages} ->
+		   {Replace, Server} = resend_message(UserName, UsersToBeReplaced),
+            		if Replace -> Server ! {Sender, saveMessages, UserName, UserNameFollowing, Messages},
+			   server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+		        true -> 
+
+
+		    User = get_user(UserName, Users),
+	
+		    {user, Name, Subscriptions, MessagesUser, Followers} = User,
+		
+		    {Response, FollowingSubs} = orddict:find(UserNameFollowing, Subscriptions),
+		    {ServerFollowing, PreviousMessages} = FollowingSubs,
+		    NewValueMessages = {Sender, Messages ++ PreviousMessages},
+		    UpdateSubs = orddict:store(UserNameFollowing, NewValueMessages, Subscriptions),
+		    UpdateUser =  {user, Name, UpdateSubs, MessagesUser, Followers},
+		    NewUsers = orddict:store(UserName, UpdateUser, Users),
+
+		    server_actor(NewUsers, CharBegin, CharEnd, PiDs, UsersToBeReplaced) end;
+
 
         {Sender, send_message, UserName, MessageText, Timestamp} ->
-            NewUsers = store_message(Users, {message, UserName, MessageText, Timestamp}),
-            Sender ! {self(), message_sent},
-            server_actor(NewUsers, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+		    %TODO: fix this one 
+           %{Replace, Server} = resend_message(UserName, UsersToBeReplaced),
+           %if Replace -> Server ! {Sender, send_message, UserName, MessageText, Timestamp},
+  	%	         server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+
+	 %   true ->
+		    
+	    	Message = {message, UserName, MessageText, Timestamp},
+
+	   	{user, _, _, _, Followers} = get_user(UserName, Users),
+
+
+	   	Pred = fun(Value, Acc) ->
+				  {Follower, Server} = Value,
+				  Server ! {self(), saveMessages, Follower, UserName, [Message]},
+				  0 end,
+	    	sets:fold(Pred, [], Followers),
+
+            	NewUsers = store_message(Users, Message),
+
+            	Sender ! {self(), message_sent},
+            	server_actor(NewUsers, CharBegin, CharEnd, PiDs, UsersToBeReplaced); %end; % end;
 
 	{Sender, get_messages, UserName} ->
+               {Replace, Server} = resend_message(UserName, UsersToBeReplaced),
+            		if Replace -> Server ! {Sender, get_messages, UserName},
+			   server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+		       true -> 
 		Messages = get_messages(Users, UserName),
-		Sender ! {self(), messages_received, Messages},
-		server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+		Sender ! {self(), message_received, Messages},
+		server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced) end;
 
         {Sender, get_timeline, UserName} ->
-            Sender ! {self(), timeline, UserName, timeline(Users, UserName)},
-            server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+
+           {Replace, Server} = resend_message(UserName, UsersToBeReplaced),
+           if Replace -> Server ! {Sender, get_timeline, UserName},
+		   server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+	      true -> 
+
+		
+	    {user, _, Subscriptions, _, _} = get_user(UserName, Users),
+
+	    SortedMessages = timeline(Users, UserName),
+
+            Sender ! {self(), timeline, UserName, SortedMessages},
+            server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced) end;
 
 
         {Sender, get_profile, UserName} ->
+
+           {Replace, Server} = resend_message(UserName, UsersToBeReplaced),
+           if Replace -> Server ! {Sender, profile, UserName},
+		   server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced);
+	   true -> 
+
+
             Sender ! {self(), profile, UserName, sort_messages(get_messages(Users, UserName))},
             server_actor(Users, CharBegin, CharEnd, PiDs, UsersToBeReplaced)
-    end.
+    end end.
 
 %%
 %% Internal Functions
@@ -238,7 +343,8 @@ getKeyServer(UserName, PiDs) ->
 
 % Create a new user with `UserName`.
 create_user(UserName) ->
-    {user, UserName, sets:new(), [], undefined}.
+	%user, Username, Subscriptions, Messages, FollowedBy 
+    {user, UserName, orddict:new(), [], sets:new()}. %, sets:new()}.
 
 % Get user with `UserName` in `Users`.
 % Throws an exception if user does not exist (to help in debugging).
@@ -251,15 +357,25 @@ get_user(UserName, Users) ->
         error -> throw({user_not_found, UserName})
     end.
 
+save_follower(UserName, UserNameFollower, ServerFollower, Users) ->
+	{user, Name, Subscriptions, Messages, Followers} = get_user(UserName, Users),
+	NewUser = {user, Name, Subscriptions, Messages, sets:add_element({UserNameFollower, ServerFollower}, Followers)},
+	orddict:store(UserName, NewUser, Users).
+
+
 % Update `Users` so `UserName` follows `UserNameToFollow`.
 follow(Users, UserName, UserNameToFollow) ->
-    {user, Name, Subscriptions, Messages, Server} = get_user(UserName, Users),
-    NewUser = {user, Name, sets:add_element(UserNameToFollow, Subscriptions), Messages, Server},
+    {user, Name, Subscriptions, Messages, Followers} = get_user(UserName, Users),
+    NewUser = {user, Name, sets:add_element(UserNameToFollow, Subscriptions), Messages, Followers},
     orddict:store(UserName, NewUser, Users).
 
 follow(Users, UserName, UserNameToFollow, ServerToFollow) ->
-    {user, Name, Subscriptions, Messages, Server} = get_user(UserName, Users),
-    NewUser = {user, Name, sets:add_element({UserNameToFollow, ServerToFollow}, Subscriptions), Messages, Server},
+
+
+    {user, Name, Subscriptions, Messages, Followers} = get_user(UserName, Users),
+
+    ServerToFollow ! {self(), newFollower, UserNameToFollow, UserName},
+    NewUser = {user, Name, orddict:store(UserNameToFollow, {ServerToFollow, []}, Subscriptions), Messages, Followers},
 
     orddict:store(UserName, NewUser, Users).
 
@@ -268,33 +384,28 @@ follow(Users, UserName, UserNameToFollow, ServerToFollow) ->
 store_message(Users, Message) ->
 
     {message, UserName, _MessageText, _Timestamp} = Message,
-    {user, Name, Subscriptions, Messages, Server} = get_user(UserName, Users),
-    NewUser = {user, Name, Subscriptions, Messages ++ [Message], Server},
+    {user, Name, Subscriptions, Messages, Followers} = get_user(UserName, Users),
+
+    NewUser = {user, Name, Subscriptions, Messages ++ [Message], Followers},
 
     orddict:store(UserName, NewUser, Users).
  
 % Get all messages by `UserName`.
 get_messages(Users, UserName) ->
-    {user, _, _, Messages, Server} = get_user(UserName, Users),
+    {user, _, _, Messages, _} = get_user(UserName, Users),
     Messages.
 
 % Generate timeline for `UserName`.
 timeline(Users, UserName) ->
-
     {user, _, Subscriptions, _, _} = get_user(UserName, Users),
 
-    UnsortedMessagesForTimeLine =
-        lists:foldl(fun({FollowedUserName, ServerFollower}, AllMessages) ->
+    Pred = fun(K, Value, AllMessages) ->
+			   
+			   {ServerUser, Messages} = Value,
+			   AllMessages ++ Messages end,
 
-			
-			Messages = if ServerFollower == self() ->
-				   	get_messages(Users, FollowedUserName);
-				   true -> server:get_messages(ServerFollower, FollowedUserName) end,
+    UnsortedMessagesForTimeLine = orddict:fold(Pred, [], Subscriptions),
 
-		        AllMessages ++ get_messages(Users, FollowedUserName)
-                    end,
-                    [],
-                    sets:to_list(Subscriptions)),
     sort_messages(UnsortedMessagesForTimeLine).
 
 % Sort `Messages` from most recent to oldest.
@@ -341,7 +452,6 @@ register_user_test() -> %register is sequential, but all the rest of the request
     {Server4, Response4} = server:register_user(server_actor, UserName4),
     {Server5, Response5} = server:register_user(server_actor, UserName5),
     {Server6, Response6} = server:register_user(server_actor, UserName6),
-
     {Server7, Response7} = server:register_user(server_actor, UserName7),
     {Server8, Response8} = server:register_user(server_actor, UserName8),
 
@@ -357,12 +467,6 @@ register_user_test() -> %register is sequential, but all the rest of the request
     ?assertMatch(user_registered, Response8),
 
     Servers = [Server1, Server2, Server3, Server4, Server5, Server6, Server7, Server8],
-
-    erlang:display("Server Register:"),
-    erlang:display(Servers),
-
-    server:printServer(Server1),
-    server:printServer(Server8),
 
     [UserName1, Server1, UserName2, Server2, UserName3, Server3, UserName4, Server4, UserName5, Server5, UserName6, Server6, UserName7, Server7, UserName8, Server8].
 
@@ -386,8 +490,9 @@ log_in_test() ->
 
     Servers = [NewServer1, NewServer2, NewServer3, Server4, NewServer5, Server6, Server7, NewServer8],
 
-    erlang:display("Server log in:"),
-    erlang:display(Servers),
+ 
+    server:printServer(NewServer1),
+    server:printServer(NewServer8),
 
    
     [UserName1, NewServer1, UserName5, NewServer5, UserName8, NewServer8].
@@ -401,9 +506,9 @@ follow_test() ->
     [UserName1, NewServer1, UserName5, NewServer5, UserName8, NewServer8 | _] =  log_in_test(),
 
 
-    ?assertMatch(followed, server:follow(NewServer1, UserName1, NewServer5, UserName5)),
-    ?assertMatch(followed, server:follow(NewServer1, UserName1, NewServer8, UserName8)),
-    %?assertMatch(followed, server:follow(NewServer5, UserName5, NewServer8, UserName8)),
+    ?assertMatch(followed, server:follow(NewServer1, UserName1, UserName5)),
+    ?assertMatch(followed, server:follow(NewServer1, UserName1, UserName8)),
+    %?assertMatch(followed, server:follow(NewServer5, UserName5, UserName8)),
     {UserName1, NewServer1, [UserName5, NewServer5, UserName8, NewServer8]}.
 
 % Test sending a message.
@@ -419,10 +524,11 @@ send_message_test() ->
 
 % Test getting a timeline.
 get_timeline_test() ->
+
     {UserName1, Server1, [UserName5, Server5, UserName8, Server8]} = follow_test(),
 
     TimeLine1 = server:get_timeline(Server1, UserName1),
-  
+	
     % When nothing has been sent, the timeline is empty.
     ?assertMatch([], TimeLine1),
 
@@ -430,6 +536,8 @@ get_timeline_test() ->
         server:send_message(Server5, UserName5, "Hello I'm B!")),
 
     % One message in the timeline.
+	
+
     ?assertMatch([
         {message, UserName5, "Hello I'm B!", _TimeB1}
     ], server:get_timeline(Server1, UserName1)),
@@ -447,29 +555,30 @@ get_timeline_test() ->
     ], server:get_timeline(Server1, UserName1)),
 
     % User 2 does not follow any so gets an empty timeline.
-    TimeLine9 = server:get_timeline(Server5, UserName5),
-
+   
     ?assertMatch([], server:get_timeline(Server5, UserName5)).
+    
    
 
 % Test getting the profile.
 get_profile_test() ->
   
-    {UserName1, Server1, [UserName2 | _]} = send_message_test(),
+    {UserName1, Server1, [UserName5, Server5 | _]} = send_message_test(),
     % Most recent message is returned first.
-    ?assertMatch([
+    %Profile = server:get_profile(Server1, UserName1),
+    %erlang:display(Profile),
+   ?assertMatch([
         {message, UserName1, "How is everyone?", _TimeA2},
         {message, UserName1, "Hello!", _TimeA1}
     ], server:get_profile(Server1, UserName1)),
     % User 2 hasn't sent any messages.
-    ?assertMatch([], server:get_profile(Server1, UserName2)).
+    ?assertMatch([], server:get_profile(Server5, UserName5)).
     
 
 % A "typical" session.
 typical_session_test() ->
     initialize_test(),
-    CharBegin = 32,
-    CharEnd = 126,
+
     Session1 = spawn_link(?MODULE, typical_session_1, [self()]),
     Session2 = spawn_link(?MODULE, typical_session_2, [self()]),
     receive
@@ -482,13 +591,22 @@ typical_session_test() ->
 
 typical_session_1(TesterPid) ->
 
+
     RegisterUser = server:register_user(server_actor, "Alice"),
+
+   
 
     {ServerA, user_registered} = RegisterUser,
     LoggedInUser = server:log_in(ServerA, "Alice"),
     {Server, logged_in} = LoggedInUser, 
+	
+ 
+
     message_sent = server:send_message(Server, "Alice", "Hello!"),
     message_sent = server:send_message(Server, "Alice", "How is everyone?"),
+
+    Profile = server:get_profile(Server, "Alice"),
+   
   
     % Check own profile
     [{message, "Alice", "How is everyone?", Time2},
@@ -500,16 +618,26 @@ typical_session_1(TesterPid) ->
     TesterPid ! {self(), ok}.
 
 typical_session_2(TesterPid) ->
- 
-    {ServerB, user_registered} = server:register_user(server_actor, "Bob"),
-    {Server, logged_in} = server:log_in(ServerB, "Bob"),
 
+
+
+	RegisterUser =  server:register_user(server_actor, "Bob"),
+
+
+ 
+    {ServerB, user_registered} = RegisterUser,
+
+
+    LoggedInUser = server:log_in(ServerB, "Bob"),
+ 
+
+    {Server, logged_in} = LoggedInUser,
     % Sleep one second, while Alice sends messages.
     timer:sleep(1000),
 
     [] = server:get_timeline(Server, "Bob"),
  
-    followed = server:follow(Server, "Bob", Server, "Alice"),
+    followed = server:follow(Server, "Bob", "Alice"),
  
     TimeLine = server:get_timeline(Server, "Bob"),
  

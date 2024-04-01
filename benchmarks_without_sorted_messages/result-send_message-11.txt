@@ -1,0 +1,1370 @@
+Parameters:
+Number of users: 5000
+Number of subscriptions: 25
+Number of messages: 10
+
+------------ Threshold: 6000 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 27266.942 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 27228.407 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 27179.633 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 27039.681 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 27408.497 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 27448.388 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 27451.043 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 27367.705 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 27438.751 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 27312.541 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 27627.485 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 27464.584 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 27427.895 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 27718.61 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 27468.48 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 27576.111 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 27443.632 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 27601.308 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 27333.083 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 27790.573 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 27338.117 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 27464.24 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 27546.031 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 27884.957 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 27505.26 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 27617.131 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 27303.829 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 27467.139 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 27683.073 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 27978.305 ms
+send_message done
+------------ Threshold: 4000 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 35252.765 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 18221.77 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 18065.057 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 18223.358 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 18150.409 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 17989.793 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 18124.719 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 18500.014 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 18315.865 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 18298.986 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 18271.742 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 18409.395 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 18233.006 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 18542.76 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 18313.441 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 18929.644 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 18468.622 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 18419.071 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 18431.045 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 18519.545 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 18298.444 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 18390.163 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 18213.865 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 18156.991 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 18238.358 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 18246.489 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 18350.966 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 18410.037 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 18356.452 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 18460.101 ms
+send_message done
+------------ Threshold: 3000 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 22370.437 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 10508.826 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 10686.379 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 10529.368 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 10583.757 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 10741.704 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 10485.359 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 10774.607 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 10631.523 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 10512.91 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 10528.126 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 10606.821 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 10640.276 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 10618.528 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 10580.77 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 10955.931 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 11140.879 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 10678.756 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 11327.057 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 10747.774 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 10491.754 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 11122.592 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 10592.312 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 10605.055 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 10663.794 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 10650.894 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 10528.204 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 10432.803 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 10632.6 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 10637.188 ms
+send_message done
+------------ Threshold: 2000 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 7641.745 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 5719.127 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 5658.217 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 5734.488 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 5581.308 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 5552.596 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 5557.274 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 5527.993 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 5710.629 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 5831.172 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 5549.223 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 5518.632 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 5556.515 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 5831.236 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 5735.242 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 5552.785 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 5601.815 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 5585.743 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 5573.391 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 5617.374 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 5602.621 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 5526.965 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 6047.157 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 5832.398 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 5557.506 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 5560.707 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 5540.065 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 5578.839 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 5583.347 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 5601.202 ms
+send_message done
+------------ Threshold: 1500 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 4363.511 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 3839.675 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 3867.379 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 3874.725 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 3825.996 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 3843.089 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 4118.755 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 3947.369 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 3732.859 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 3757.165 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 3772.404 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 3726.648 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 3745.823 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 3799.18 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 3911.929 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 3802.708 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 3765.556 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 4241.173 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 3846.382 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 3713.076 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 3709.535 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 3728.504 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 3927.667 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 3883.576 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 3692.779 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 3687.143 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 3671.321 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 3707.515 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 3688.153 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 3686.043 ms
+send_message done
+------------ Threshold: 1000 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 2178.22 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 2508.914 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 2292.397 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 2404.216 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 2378.29 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 2233.333 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 2288.646 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 2248.493 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 2286.566 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 2282.855 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 2371.547 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 2748.778 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 2253.216 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 2229.713 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 2206.689 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 2255.241 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 2717.617 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 2231.582 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 2255.716 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 2240.438 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 2238.999 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 2225.286 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 2245.83 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 2254.063 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 2411.483 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 2386.897 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 2297.782 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 2294.51 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 2267.821 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 2438.921 ms
+send_message done
+------------ Threshold: 500 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 1217.501 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 1088.501 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 1212.76 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 1159.898 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 1082.816 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 1422.748 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 1206.865 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 1129.809 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 1131.041 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 1320.351 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 1290.323 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 1119.119 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 1116.533 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 1133.148 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 1219.256 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 1221.588 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 1110.82 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 1132.545 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 1161.686 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 1152.789 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 1446.441 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 1438.862 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 1148.673 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 1165.043 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 1154.042 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 1159.338 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 1156.599 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 1124.652 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 1698.738 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 1213.684 ms
+send_message done
+------------ Threshold: 100 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 601.525 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 518.667 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 633.294 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 507.679 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 500.373 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 649.206 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 584.085 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 527.64 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 523.99 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 646.019 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 561.386 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 537.255 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 529.467 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 519.988 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 526.135 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 773.191 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 726.716 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 538.241 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 534.678 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 516.142 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 549.919 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 647.683 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 730.712 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 625.687 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 540.666 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 512.655 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 518.189 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 516.013 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 523.613 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 516.722 ms
+send_message done
+------------ Threshold: 50 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 539.189 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 537.456 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 550.321 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 502.481 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 488.527 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 585.698 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 563.032 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 500.909 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 498.644 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 531.284 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 535.894 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 471.557 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 474.811 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 469.451 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 562.097 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 596.889 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 494.753 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 479.01 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 479.459 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 484.674 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 482.085 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 482.731 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 663.096 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 703.398 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 519.031 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 488.731 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 483.217 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 477.071 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 472.421 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 510.124 ms
+send_message done
+------------ Threshold: 20 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 537.405 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 544.479 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 545.417 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 540.048 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 538.27 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 535.211 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 517.509 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 518.917 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 533.8 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 543.247 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 536.5 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 550.691 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 519.792 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 531.12 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 563.579 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 553.486 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 542.372 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 560.123 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 544.87 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 521.137 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 510.247 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 534.123 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 544.117 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 527.875 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 524.756 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 533.675 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 530.926 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 552.177 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 571.229 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 579.468 ms
+send_message done
+------------ Threshold: 10 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 566.375 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 576.163 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 500.469 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 532.148 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 481.084 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 481.147 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 504.175 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 515.81 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 491.038 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 520.859 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 514.245 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 527.26 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 539.864 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 528.735 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 519.184 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 537.736 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 509.346 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 474.254 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 501.58 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 500.725 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 530.517 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 548.458 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 567.716 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 506.833 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 503.607 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 503.506 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 538.828 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 517.313 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 509.637 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 525.54 ms
+send_message done
+------------ Threshold: 5 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 532.468 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 544.462 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 534.862 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 546.068 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 544.978 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 494.141 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 480.031 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 470.323 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 486.637 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 541.781 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 548.885 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 501.3 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 496.534 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 523.079 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 491.098 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 499.772 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 462.796 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 462.526 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 446.955 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 474.08 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 479.464 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 484.334 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 477.985 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 484.962 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 489.672 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 484.755 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 517.756 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 516.727 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 526.779 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 459.223 ms
+send_message done
+------------ Threshold: 4 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 499.886 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 497.276 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 496.293 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 486.798 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 516.289 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 515.813 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 522.678 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 497.694 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 504.09 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 479.762 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 491.562 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 516.427 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 509.676 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 508.009 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 476.85 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 485.739 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 514.487 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 503.754 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 483.166 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 521.829 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 545.366 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 532.271 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 490.25 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 500.304 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 495.685 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 526.181 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 533.972 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 520.135 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 504.177 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 496.72 ms
+send_message done
+------------ Threshold: 2 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 555.049 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 533.744 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 533.448 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 529.113 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 494.474 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 450.402 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 474.402 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 481.0 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 527.933 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 540.867 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 543.236 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 533.728 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 547.7 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 504.199 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 477.236 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 469.731 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 477.632 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 443.109 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 511.011 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 520.168 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 522.165 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 520.556 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 512.008 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 443.644 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 482.348 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 564.498 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 558.941 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 566.561 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 560.881 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 574.523 ms
+send_message done
+------------ Threshold: 1 ------------ 
+Starting benchmark send_message: 1
+Wall clock time = 447.063 ms
+send_message done
+Starting benchmark send_message: 2
+Wall clock time = 446.105 ms
+send_message done
+Starting benchmark send_message: 3
+Wall clock time = 481.428 ms
+send_message done
+Starting benchmark send_message: 4
+Wall clock time = 484.238 ms
+send_message done
+Starting benchmark send_message: 5
+Wall clock time = 484.891 ms
+send_message done
+Starting benchmark send_message: 6
+Wall clock time = 476.592 ms
+send_message done
+Starting benchmark send_message: 7
+Wall clock time = 473.979 ms
+send_message done
+Starting benchmark send_message: 8
+Wall clock time = 432.962 ms
+send_message done
+Starting benchmark send_message: 9
+Wall clock time = 465.732 ms
+send_message done
+Starting benchmark send_message: 10
+Wall clock time = 393.97 ms
+send_message done
+Starting benchmark send_message: 11
+Wall clock time = 367.368 ms
+send_message done
+Starting benchmark send_message: 12
+Wall clock time = 372.245 ms
+send_message done
+Starting benchmark send_message: 13
+Wall clock time = 371.59 ms
+send_message done
+Starting benchmark send_message: 14
+Wall clock time = 367.648 ms
+send_message done
+Starting benchmark send_message: 15
+Wall clock time = 427.055 ms
+send_message done
+Starting benchmark send_message: 16
+Wall clock time = 476.885 ms
+send_message done
+Starting benchmark send_message: 17
+Wall clock time = 503.528 ms
+send_message done
+Starting benchmark send_message: 18
+Wall clock time = 501.066 ms
+send_message done
+Starting benchmark send_message: 19
+Wall clock time = 475.053 ms
+send_message done
+Starting benchmark send_message: 20
+Wall clock time = 515.858 ms
+send_message done
+Starting benchmark send_message: 21
+Wall clock time = 518.105 ms
+send_message done
+Starting benchmark send_message: 22
+Wall clock time = 490.361 ms
+send_message done
+Starting benchmark send_message: 23
+Wall clock time = 472.787 ms
+send_message done
+Starting benchmark send_message: 24
+Wall clock time = 430.812 ms
+send_message done
+Starting benchmark send_message: 25
+Wall clock time = 387.366 ms
+send_message done
+Starting benchmark send_message: 26
+Wall clock time = 423.077 ms
+send_message done
+Starting benchmark send_message: 27
+Wall clock time = 381.804 ms
+send_message done
+Starting benchmark send_message: 28
+Wall clock time = 370.18 ms
+send_message done
+Starting benchmark send_message: 29
+Wall clock time = 362.802 ms
+send_message done
+Starting benchmark send_message: 30
+Wall clock time = 367.968 ms
+send_message done

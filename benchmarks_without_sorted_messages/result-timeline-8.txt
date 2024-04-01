@@ -1,0 +1,1370 @@
+Parameters:
+Number of users: 5000
+Number of subscriptions: 25
+Number of messages: 10
+
+------------ Threshold: 6000 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 1651.222 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 1656.781 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 1661.967 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 1651.524 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 1643.134 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 1637.225 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 1626.549 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 1651.294 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 1631.155 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 1634.108 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 1653.863 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 1655.527 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 1661.707 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 1659.13 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 1659.987 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 1659.264 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 1652.834 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 1626.118 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 1639.218 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 1623.417 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 1624.332 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 1626.184 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 1616.957 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 1618.839 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 1632.571 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 1641.254 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 1637.054 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 1623.528 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 1629.625 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 1627.174 ms
+timeline done
+------------ Threshold: 4000 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 18461.6 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 1562.999 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 1553.197 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 1562.283 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 1563.882 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 1570.503 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 1561.051 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 1579.991 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 1567.818 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 1562.016 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 1567.935 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 1562.893 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 1572.058 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 1556.593 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 1581.565 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 1593.614 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 1577.135 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 1575.814 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 1583.497 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 1566.619 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 1536.065 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 1540.893 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 1540.527 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 1559.889 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 1558.361 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 1592.383 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 1573.371 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 1571.095 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 1577.553 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 1573.114 ms
+timeline done
+------------ Threshold: 3000 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 13244.834 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 1626.304 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 1618.961 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 1612.851 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 1647.538 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 1652.641 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 1657.009 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 1631.573 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 1635.363 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 1628.758 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 1618.64 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 1623.021 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 1632.858 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 1630.625 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 1636.19 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 1670.278 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 1648.254 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 1650.839 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 1649.632 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 1635.994 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 1600.649 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 1618.875 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 1607.324 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 1631.233 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 1611.94 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 1610.959 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 1613.35 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 1636.445 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 1639.195 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 1636.952 ms
+timeline done
+------------ Threshold: 2000 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 3585.039 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 1475.684 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 1456.416 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 1447.038 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 1462.491 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 1467.935 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 1464.58 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 1473.579 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 1468.253 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 1474.953 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 1476.889 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 1473.528 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 1471.018 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 1446.524 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 1439.507 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 1451.908 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 1452.898 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 1466.331 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 1447.526 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 1469.324 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 1472.744 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 1473.577 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 1470.192 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 1452.522 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 1448.613 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 1429.962 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 1440.052 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 1450.355 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 1442.478 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 1445.156 ms
+timeline done
+------------ Threshold: 1500 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 1455.146 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 1261.13 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 1275.011 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 1287.884 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 1283.003 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 1281.049 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 1278.739 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 1285.702 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 1282.487 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 1293.653 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 1286.3 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 1267.952 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 1258.635 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 1264.106 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 1260.964 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 1270.714 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 1268.192 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 1268.993 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 1266.429 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 1288.138 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 1281.524 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 1281.73 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 1283.423 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 1286.18 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 1282.608 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 1252.531 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 1258.649 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 1274.944 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 1271.627 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 1263.94 ms
+timeline done
+------------ Threshold: 1000 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 1153.301 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 1113.628 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 1114.873 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 1131.097 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 1123.663 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 1127.323 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 1118.442 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 1114.108 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 1108.112 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 1099.131 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 1093.954 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 1100.166 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 1116.109 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 1102.008 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 1106.843 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 1119.105 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 1116.259 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 1114.651 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 1123.054 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 1128.61 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 1119.289 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 1112.663 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 1121.642 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 1117.513 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 1092.121 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 1112.291 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 1110.831 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 1103.315 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 1095.289 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 1150.096 ms
+timeline done
+------------ Threshold: 500 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 1051.395 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 1026.019 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 1023.966 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 1034.555 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 1028.133 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 1022.192 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 1034.318 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 1033.996 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 1034.25 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 1033.302 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 1043.994 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 1043.033 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 1027.754 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 1016.967 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 1010.385 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 1016.775 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 1033.565 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 1027.971 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 1024.03 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 1017.916 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 1019.648 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 1008.116 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 1006.512 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 1009.234 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 1015.572 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 1017.809 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 1005.42 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 1017.609 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 1014.734 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 1016.692 ms
+timeline done
+------------ Threshold: 100 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 1204.885 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 1031.592 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 1035.524 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 1023.906 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 1013.522 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 1018.108 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 1029.466 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 1022.817 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 1032.003 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 1025.295 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 1021.893 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 1019.408 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 1019.67 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 1028.397 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 1020.029 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 1020.284 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 1029.633 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 1026.48 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 1021.797 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 1011.024 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 999.052 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 1008.834 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 1009.472 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 1004.581 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 1010.357 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 1007.922 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 1012.508 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 1016.122 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 1020.213 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 1026.05 ms
+timeline done
+------------ Threshold: 50 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 1140.811 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 1048.443 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 1042.031 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 1042.639 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 1046.617 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 1044.108 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 1036.23 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 1049.16 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 1049.694 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 1043.455 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 1052.629 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 1051.46 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 1033.188 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 1027.175 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 1031.657 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 1034.929 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 1029.575 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 1038.782 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 1036.558 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 1036.259 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 1032.982 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 1037.874 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 1037.177 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 1036.917 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 1049.489 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 1039.409 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 1044.985 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 1046.493 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 1036.554 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 1025.392 ms
+timeline done
+------------ Threshold: 20 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 1117.542 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 993.116 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 981.389 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 984.592 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 973.746 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 971.987 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 979.749 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 975.682 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 989.751 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 982.051 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 983.158 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 975.697 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 981.326 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 973.568 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 988.195 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 981.925 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 983.948 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 979.241 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 985.16 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 982.988 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 977.011 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 962.367 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 968.615 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 969.006 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 971.642 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 970.306 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 972.193 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 975.286 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 963.766 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 957.869 ms
+timeline done
+------------ Threshold: 10 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 1125.537 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 941.506 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 856.99 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 847.298 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 862.241 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 867.055 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 875.243 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 887.624 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 870.011 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 872.007 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 869.365 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 864.708 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 866.366 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 860.251 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 849.106 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 844.844 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 849.948 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 867.58 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 858.847 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 859.593 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 846.314 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 852.255 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 849.524 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 856.346 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 849.321 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 854.908 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 859.269 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 861.064 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 860.64 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 861.79 ms
+timeline done
+------------ Threshold: 5 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 1077.155 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 855.669 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 808.736 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 798.903 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 791.064 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 795.484 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 796.724 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 796.258 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 798.892 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 793.064 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 796.869 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 789.887 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 790.014 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 794.623 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 794.669 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 800.04 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 795.867 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 798.773 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 805.324 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 800.377 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 803.501 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 805.399 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 805.538 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 805.947 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 806.315 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 805.108 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 802.716 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 811.222 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 807.708 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 802.019 ms
+timeline done
+------------ Threshold: 4 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 1029.372 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 833.259 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 805.828 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 800.247 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 803.216 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 806.665 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 800.625 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 800.467 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 800.387 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 805.065 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 803.263 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 790.292 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 799.284 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 798.655 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 804.031 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 801.653 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 807.514 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 806.925 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 800.836 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 805.163 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 799.922 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 801.404 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 808.273 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 807.97 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 809.423 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 807.976 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 804.705 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 802.493 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 801.832 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 808.938 ms
+timeline done
+------------ Threshold: 2 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 1005.6 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 773.779 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 714.708 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 700.79 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 697.518 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 697.739 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 698.51 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 701.076 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 697.29 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 698.513 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 696.892 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 698.232 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 700.87 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 698.167 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 695.279 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 695.875 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 696.339 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 692.319 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 687.63 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 683.368 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 683.76 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 686.107 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 683.445 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 686.011 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 683.621 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 678.612 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 683.662 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 683.578 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 679.572 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 690.548 ms
+timeline done
+------------ Threshold: 1 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 893.485 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 778.045 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 693.404 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 664.225 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 679.731 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 672.579 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 669.253 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 668.005 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 669.114 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 669.925 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 669.059 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 674.408 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 678.743 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 674.411 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 674.984 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 672.208 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 663.985 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 663.957 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 672.446 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 673.803 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 673.539 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 665.949 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 665.017 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 666.955 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 674.638 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 674.323 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 680.238 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 671.245 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 667.406 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 666.258 ms
+timeline done

@@ -97,7 +97,10 @@ get_messages(ServerPid, UserName) ->
 	ServerPid ! {self(), get_messages, UserName},
 	receive
 		{_ResponsePid, message_received, Messages} ->
-			Messages
+			Messages;
+                {_, Response, Messages} ->
+			erlang:display("Response"),
+			erlang:display(Response)
 	end.
 
 % Request the timeline of a user.

@@ -11,6 +11,8 @@ fib(N) -> fib(N - 1) + fib(N - 2).
 
 % Recommendation: run each test at least 30 times to get statistically relevant
 % results.
+%
+
 run_benchmark(Name, Fun, Times) ->
     ThisPid = self(),
     lists:foreach(fun (N) ->
@@ -87,68 +89,157 @@ test_fib_benchmark() ->
 %
 % Note that this code depends on the implementation of the server. You will need to
 % change it if you change the representation of the data in the server.
-initialize_server() ->
+initialize_server(Treshold, NumberOfUsers, NumberOfSubscriptions, NumberOfMessages) ->
     % Seed random number generator to get reproducible results.
     rand:seed_s(exsplus, {0, 0, 0}),
-    % Parameters
-    NumberOfUsers = 5000,
-    NumberOfSubscriptions = 25,
-    NumberOfMessages = 10,
-    io:format("Parameters:~n"),
-    io:format("Number of users: ~p~n", [NumberOfUsers]),
-    io:format("Number of subscriptions: ~p~n", [NumberOfSubscriptions]),
-    io:format("Number of messages: ~p~n", [NumberOfMessages]),
-    io:format("~n"),
+   
+
+	
+    %In een normale omstandigheden heb je normaal meer messages and followers than users, dus om dit te representeren wil ik 
+   
+    ServerPid = server_parallelized_new:initialize_new(Treshold),
+   
+    %ServerPid = server_parallelized:initialize(),
     % Generate user names: just the numbers from 1 to NumberOfUsers, as strings.
     % Note: integer_to_list convert an integer to a string, e.g. 123 to "123".
     % Note: the syntax [F(X) || X <- L] is a list comprehension. It generates a list
     % by applying F to each element of L. It is equivalent to
     % lists:map(fun (X) -> F(X) end, L).
     UserNames = [integer_to_list(I) || I <- lists:seq(1, NumberOfUsers)],
-    % Generate users dict.
-    Users = dict:from_list(lists:map(fun (Name) ->
-        % Random subscriptions.
-        Subscriptions = [pick_random(UserNames) || _ <- lists:seq(1, NumberOfSubscriptions)],
-        % Random messages.
-        Messages = [generate_message(Name, I) || I <- lists:seq(1, NumberOfMessages)],
-        User = {user, Name, sets:from_list(Subscriptions), Messages},
-        {Name, User} % {key, value} for dict.
-        end,
-        UserNames)),
-    %ServerPid = server_centralized:initialize_with(Users),
-    ServerPid = server_paralized:initialize_with(Users),
-    erlang:display("Server initialized"),
-    {ServerPid, UserNames}.
+
+    RegisteredUsersPred = fun (Name) -> 
+			   %1. Register the user
+			   {PiD, _} = server:register_user(ServerPid, Name),
+
+			   {PiD, Name}
+	   end,
+
+   
+    RegisteredUsers = lists:map(RegisteredUsersPred, UserNames),
+
+
+   FollowAndSendMessage = fun(Elm) ->
+				{PiD, Name} = Elm,
+				loop_follow(PiD, Name, RegisteredUsers, NumberOfSubscriptions),
+				loop_sendmessage(PiD, Name, NumberOfMessages),
+				{PiD, Name}
+		end,
+
+   {lists:map(FollowAndSendMessage, RegisteredUsers), ServerPid}.
+
+
+loop_follow(_, _, _, 0) ->  ok;
+loop_follow(PiD, Name, Users, Count) ->
+	UserNameToFollow = pick_random_user(Users),
+	NewUsers = lists:delete(UserNameToFollow, Users),
+        %io:format("User ~p followed ~p~n", [Name, UserNameToFollow]),
+	server:follow(PiD, Name, UserNameToFollow),
+	loop_follow(PiD, Name, NewUsers, Count - 1).
+
+
+loop_sendmessage(_, _, 0) -> ok;
+loop_sendmessage(Pid, Name, Count) ->
+	Message = generate_string(Name, Count),
+        %io:format("User ~p send message ~p~n", [Name, Message]),
+	server:send_message(Pid, Name, Message),
+	loop_sendmessage(Pid, Name, Count - 1).
+	
+
+pick_random_user(List) ->
+	{_, Name} = pick_random(List),
+	Name.
+
 
 % Pick a random element from a list.
 pick_random(List) ->
     lists:nth(rand:uniform(length(List)), List).
+
+
+% Generate a random subscription for 'UserName'
+generate_subscription(UserNames) ->
+	Key = pick_random(UserNames),
+	Value = {unknown, []}, %server of Username and messages 
+	{Key, Value}.
+
+
+% Generate random string 
+generate_string(UserName, I) -> "Message " ++ integer_to_list(I) ++ " from " ++ UserName.
+
+ 
+
 
 % Generate a random message `I` for `UserName`.
 generate_message(UserName, I) ->
     Text = "Message " ++ integer_to_list(I) ++ " from " ++ UserName,
     {message, UserName, Text, os:system_time()}.
 
+
+cleanup(InitServer, _) ->
+      InitServer ! {stop}.
+
+
 % Get timeline of 10000 users (repeated 30 times).
 test_timeline() ->
-    {ServerPid, UserName} = initialize_server(),
-    run_benchmark("timeline",
-        fun () ->
-            lists:foreach(fun (_) ->
-                server:get_timeline(ServerPid, pick_random(UserName))
-            end,
-            lists:seq(1, 10000))
-        end,
-        30).
+    %InitializedServers = initializeServers(),
+    NumberOfUsers = 5000,
+    NumberOfSubscriptions = 25,
+    NumberOfMessages = 10,
+    Thresholds = [6000, 3000, 1500, 500, 100, 10, 5, 1],
+    io:format("Parameters:~n"),
+    io:format("Number of users: ~p~n", [NumberOfUsers]),
+    io:format("Number of subscriptions: ~p~n", [NumberOfSubscriptions]),
+    io:format("Number of messages: ~p~n", [NumberOfMessages]),
+    io:format("~n"),
+
+    Func = fun(Threshold) ->
+	io:format("------------ Threshold: ~p ------------ ~n", [Threshold]),
+	{ListsUserPids, InitServer} = initialize_server(Threshold, NumberOfUsers, NumberOfSubscriptions, NumberOfMessages),
+    
+    	Done = run_benchmark("timeline",
+        	fun () ->
+           		 lists:foreach(fun (_) ->
+			{PiD, User} = pick_random(ListsUserPids),
+               		 server:get_timeline(PiD, User)
+            	end,
+           	 lists:seq(1, 10000))
+        	end,
+        	30),
+	   cleanup(InitServer, Done)
+
+	   end, 
+
+	lists:map(Func, Thresholds).
 
 % Send message for 10000 users.
 test_send_message() ->
-    {ServerPid, UserName} = initialize_server(),
-    run_benchmark("send_message",
+    NumberOfUsers = 5000,
+    NumberOfSubscriptions = 25,
+    NumberOfMessages = 10,
+    Thresholds = [6000, 3000, 1500, 1000, 500, 100, 10, 5, 1],
+
+    io:format("Parameters:~n"),
+    io:format("Number of users: ~p~n", [NumberOfUsers]),
+    io:format("Number of subscriptions: ~p~n", [NumberOfSubscriptions]),
+    io:format("Number of messages: ~p~n", [NumberOfMessages]),
+    io:format("~n"),
+
+    Func = fun(Threshold) ->
+	io:format("------------ Threshold: ~p ------------ ~n", [Threshold]),
+	{ListsUserPids, InitServer} = initialize_server(Threshold, NumberOfUsers, NumberOfSubscriptions, NumberOfMessages),
+    
+
+
+    Done = run_benchmark("send_message",
         fun () ->
-            lists:foreach(fun (_) ->
-                server:send_message(ServerPid, pick_random(UserName), "Test")
+            lists:foreach(fun (_) ->	
+                {PiD, User} = pick_random(ListsUserPids),
+                server:send_message(PiD, User, "Test")
             end,
             lists:seq(1, 10000))
         end,
-        30).
+        30),
+    cleanup(InitServer, Done)
+	
+	   end,
+
+    lists:map(Func, Thresholds).
