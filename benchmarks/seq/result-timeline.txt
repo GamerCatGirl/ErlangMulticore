@@ -1,0 +1,95 @@
+Parameters:
+Number of users: 5000
+Number of subscriptions: 25
+Number of messages: 10
+
+Starting benchmark timeline: 1
+Wall clock time = 851.537 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 796.632 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 795.079 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 803.348 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 809.013 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 806.633 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 806.62 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 813.861 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 809.832 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 815.879 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 804.615 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 810.519 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 804.708 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 803.958 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 803.543 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 809.207 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 807.077 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 810.443 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 801.418 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 803.671 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 800.582 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 804.683 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 805.164 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 801.613 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 796.941 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 808.157 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 813.123 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 818.194 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 799.695 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 808.523 ms
+timeline done

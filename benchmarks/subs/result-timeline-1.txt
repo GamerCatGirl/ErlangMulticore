@@ -1,0 +1,460 @@
+Parameters:
+Number of users: 1000
+Number of subscriptions: [1,5,10,25,30]
+Number of messages: 10
+
+------------ subscriptions: 1 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 57.807 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 51.07 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 57.051 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 54.635 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 50.841 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 47.568 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 54.34 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 51.914 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 50.194 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 48.958 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 50.193 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 50.185 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 47.25 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 47.622 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 55.177 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 51.108 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 52.788 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 51.834 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 50.072 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 47.198 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 47.126 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 50.96 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 52.847 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 51.452 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 56.158 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 49.586 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 52.744 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 54.383 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 54.541 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 47.616 ms
+timeline done
+------------ subscriptions: 5 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 87.995 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 93.702 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 90.74 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 91.488 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 83.908 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 89.162 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 84.538 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 90.041 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 86.2 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 90.197 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 84.027 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 81.8 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 81.695 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 81.161 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 85.774 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 92.68 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 92.488 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 92.258 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 83.595 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 80.8 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 82.251 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 92.031 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 92.11 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 92.053 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 92.022 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 90.805 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 80.954 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 80.385 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 91.466 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 87.008 ms
+timeline done
+------------ subscriptions: 10 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 147.837 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 140.228 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 140.628 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 129.039 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 137.914 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 126.375 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 136.749 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 136.047 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 124.877 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 137.08 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 127.025 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 135.587 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 123.78 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 134.838 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 131.181 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 136.232 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 123.741 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 135.189 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 123.352 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 135.735 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 123.761 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 135.64 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 136.653 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 129.301 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 135.739 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 123.926 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 135.14 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 125.271 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 134.565 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 130.5 ms
+timeline done
+------------ subscriptions: 25 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 314.98 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 312.614 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 286.409 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 293.905 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 280.496 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 288.579 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 279.493 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 286.874 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 273.076 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 287.183 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 291.024 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 281.603 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 284.519 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 273.916 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 269.138 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 274.121 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 279.13 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 270.406 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 287.405 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 272.216 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 286.611 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 286.603 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 281.696 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 289.898 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 274.519 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 288.884 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 270.902 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 281.74 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 270.706 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 281.578 ms
+timeline done
+------------ subscriptions: 30 ------------ 
+Starting benchmark timeline: 1
+Wall clock time = 418.737 ms
+timeline done
+Starting benchmark timeline: 2
+Wall clock time = 400.393 ms
+timeline done
+Starting benchmark timeline: 3
+Wall clock time = 373.797 ms
+timeline done
+Starting benchmark timeline: 4
+Wall clock time = 375.268 ms
+timeline done
+Starting benchmark timeline: 5
+Wall clock time = 376.251 ms
+timeline done
+Starting benchmark timeline: 6
+Wall clock time = 370.134 ms
+timeline done
+Starting benchmark timeline: 7
+Wall clock time = 384.223 ms
+timeline done
+Starting benchmark timeline: 8
+Wall clock time = 383.261 ms
+timeline done
+Starting benchmark timeline: 9
+Wall clock time = 378.637 ms
+timeline done
+Starting benchmark timeline: 10
+Wall clock time = 379.037 ms
+timeline done
+Starting benchmark timeline: 11
+Wall clock time = 366.075 ms
+timeline done
+Starting benchmark timeline: 12
+Wall clock time = 367.76 ms
+timeline done
+Starting benchmark timeline: 13
+Wall clock time = 378.682 ms
+timeline done
+Starting benchmark timeline: 14
+Wall clock time = 377.897 ms
+timeline done
+Starting benchmark timeline: 15
+Wall clock time = 365.891 ms
+timeline done
+Starting benchmark timeline: 16
+Wall clock time = 373.628 ms
+timeline done
+Starting benchmark timeline: 17
+Wall clock time = 373.496 ms
+timeline done
+Starting benchmark timeline: 18
+Wall clock time = 383.613 ms
+timeline done
+Starting benchmark timeline: 19
+Wall clock time = 365.908 ms
+timeline done
+Starting benchmark timeline: 20
+Wall clock time = 375.958 ms
+timeline done
+Starting benchmark timeline: 21
+Wall clock time = 363.015 ms
+timeline done
+Starting benchmark timeline: 22
+Wall clock time = 367.683 ms
+timeline done
+Starting benchmark timeline: 23
+Wall clock time = 361.152 ms
+timeline done
+Starting benchmark timeline: 24
+Wall clock time = 370.563 ms
+timeline done
+Starting benchmark timeline: 25
+Wall clock time = 373.525 ms
+timeline done
+Starting benchmark timeline: 26
+Wall clock time = 365.761 ms
+timeline done
+Starting benchmark timeline: 27
+Wall clock time = 370.649 ms
+timeline done
+Starting benchmark timeline: 28
+Wall clock time = 368.552 ms
+timeline done
+Starting benchmark timeline: 29
+Wall clock time = 382.815 ms
+timeline done
+Starting benchmark timeline: 30
+Wall clock time = 365.96 ms
+timeline done

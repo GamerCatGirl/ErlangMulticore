@@ -1,6 +1,6 @@
 -module(benchmark).
 
--export([test_fib/0, test_timeline/0, test_send_message/0]).
+-export([test_fib/0, test_timeline/0, test_send_message/0, test_profile/0, test_send_message_latency_broadcasting/0, test_send_message_latency_broadcasting_noFollower/0, test_timeline_subs/0, test_timeline_seq/0, test_send_message_seq/0, test_profile_seq/0, test_timeline_thresholds/0, test_profile_1/0, test_send_message_latency_broadcasting_10/0]).
 
 %% Fibonacci
 fib(0) -> 1;
@@ -31,6 +31,8 @@ run_benchmark(Name, Fun, Times) ->
         end
     end, lists:seq(1, Times)).
 
+
+
 run_benchmark_once(Name, Fun, N) ->
     io:format("Starting benchmark ~s: ~p~n", [Name, N]),
 
@@ -59,6 +61,7 @@ run_benchmark_once(Name, Fun, N) ->
     WallClockTime = timer:now_diff(os:timestamp(), StartTime),
     %{_, CpuTime} = statistics(runtime),
     io:format("Wall clock time = ~p ms~n", [WallClockTime / 1000.0]),
+   
     %io:format("CPU time = ~p ms~n", [CpuTime]),
     io:format("~s done~n", [Name]).
 
@@ -178,13 +181,214 @@ cleanup(InitServer, _) ->
       InitServer ! {stop}.
 
 
-% Get timeline of 10000 users (repeated 30 times).
-test_timeline() ->
+%
+test_profile() ->
     %InitializedServers = initializeServers(),
     NumberOfUsers = 5000,
     NumberOfSubscriptions = 25,
     NumberOfMessages = 10,
-    Thresholds = [6000, 3000, 1500, 500, 100, 10, 5, 1],
+    Thresholds = [1],
+    io:format("Parameters:~n"),
+    io:format("Number of users: ~p~n", [NumberOfUsers]),
+    io:format("Number of subscriptions: ~p~n", [NumberOfSubscriptions]),
+    io:format("Number of messages: ~p~n", [NumberOfMessages]),
+    io:format("~n"),
+
+    Func = fun(Threshold) ->
+	io:format("------------ Threshold: ~p ------------ ~n", [Threshold]),
+	{ListsUserPids, InitServer} = initialize_server(Threshold, NumberOfUsers, NumberOfSubscriptions, NumberOfMessages),
+	    
+    	Done = run_benchmark("timeline",
+        	fun () ->
+           		 lists:foreach(fun (_) ->
+			{PiD, User} = pick_random(ListsUserPids),
+               		 server:get_profile(PiD, User)
+            	end,
+           	 lists:seq(1, 10000))
+        	end,
+        	30),
+	   cleanup(InitServer, Done)
+
+	   end, 
+
+	lists:map(Func, Thresholds).
+
+test_profile_1() ->
+    %InitializedServers = initializeServers(),
+    NumberOfUsers = 5000,
+    NumberOfSubscriptions = 25,
+    NumberOfMessages = 10,
+    Thresholds = [1],
+    io:format("Parameters:~n"),
+    io:format("Number of users: ~p~n", [NumberOfUsers]),
+    io:format("Number of subscriptions: ~p~n", [NumberOfSubscriptions]),
+    io:format("Number of messages: ~p~n", [NumberOfMessages]),
+    io:format("~n"),
+
+    Func = fun(Threshold) ->
+	io:format("------------ Threshold: ~p ------------ ~n", [Threshold]),
+	{ListsUserPids, InitServer} = initialize_server(Threshold, NumberOfUsers, NumberOfSubscriptions, NumberOfMessages),
+	    
+    	Done = run_benchmark("timeline",
+        	fun () ->
+           	%	 lists:foreach(fun (_) ->
+			{PiD, User} = pick_random(ListsUserPids),
+               		 server:get_profile(PiD, User)
+            	%end,
+           	% lists:seq(1, 10000))
+        	end,
+        	30),
+	   cleanup(InitServer, Done)
+
+	   end, 
+
+	lists:map(Func, Thresholds).
+
+
+
+
+% Get timeline of 10000 users (repeated 30 times).
+%TODO: deze neemt steeds meeste tijd, anders dit ook met minder users 
+test_timeline_subs() ->
+    %InitializedServers = initializeServers(),
+    NumberOfUsers = 1000,
+    NumbersOfSubscriptions = [1, 5, 10, 25, 30],
+    NumberOfMessages = 10,
+    Threshold = 1,
+    io:format("Parameters:~n"),
+    io:format("Number of users: ~p~n", [NumberOfUsers]),
+    io:format("Number of subscriptions: ~p~n", [NumbersOfSubscriptions]),
+    io:format("Number of messages: ~p~n", [NumberOfMessages]),
+    io:format("~n"),
+
+    Func = fun(NumberOfSubscriptions) ->
+	io:format("------------ subscriptions: ~p ------------ ~n", [NumberOfSubscriptions]),
+	{ListsUserPids, InitServer} = initialize_server(Threshold, NumberOfUsers, NumberOfSubscriptions, NumberOfMessages),
+    
+    	Done = run_benchmark("timeline",
+        	fun () ->
+           		 lists:foreach(fun (_) ->
+			{PiD, User} = pick_random(ListsUserPids),
+               		 server:get_timeline(PiD, User)
+            	end,
+           	 lists:seq(1, 10000))
+        	end,
+        	30),
+	   cleanup(InitServer, Done)
+
+	   end, 
+
+	lists:map(Func, NumbersOfSubscriptions).
+
+% Creates a server with 5000 users following 25 others and sending 10 messages.
+%
+% Note that this code depends on the implementation of the server. You will need to
+% change it if you change the representation of the data in the server.
+initialize_server() ->
+    % Seed random number generator to get reproducible results.
+    rand:seed_s(exsplus, {0, 0, 0}),
+    % Parameters
+    NumberOfUsers = 5000,
+    NumberOfSubscriptions = 25,
+    NumberOfMessages = 10,
+    io:format("Parameters:~n"),
+    io:format("Number of users: ~p~n", [NumberOfUsers]),
+    io:format("Number of subscriptions: ~p~n", [NumberOfSubscriptions]),
+    io:format("Number of messages: ~p~n", [NumberOfMessages]),
+    io:format("~n"),
+    % Generate user names: just the numbers from 1 to NumberOfUsers, as strings.
+    % Note: integer_to_list convert an integer to a string, e.g. 123 to "123".
+    % Note: the syntax [F(X) || X <- L] is a list comprehension. It generates a list
+    % by applying F to each element of L. It is equivalent to
+    % lists:map(fun (X) -> F(X) end, L).
+    UserNames = [integer_to_list(I) || I <- lists:seq(1, NumberOfUsers)],
+    % Generate users dict.
+    Users = dict:from_list(lists:map(fun (Name) ->
+        % Random subscriptions.
+        Subscriptions = [pick_random(UserNames) || _ <- lists:seq(1, NumberOfSubscriptions)],
+        % Random messages.
+        Messages = [generate_message(Name, I) || I <- lists:seq(1, NumberOfMessages)],
+        User = {user, Name, sets:from_list(Subscriptions), Messages},
+        {Name, User} % {key, value} for dict.
+        end,
+        UserNames)),
+    ServerPid = server_centralized:initialize_with(Users),
+    {ServerPid, UserNames}.
+
+
+test_timeline_seq() ->
+% Get timeline of 10000 users (repeated 30 times).
+    {ServerPid, UserName} = initialize_server(),
+    run_benchmark("timeline",
+        fun () ->
+            lists:foreach(fun (_) ->
+                server:get_timeline(ServerPid, pick_random(UserName))
+            end,
+            lists:seq(1, 10000))
+        end,
+        30).
+
+test_send_message_seq() ->
+% Get timeline of 10000 users (repeated 30 times).
+    {ServerPid, UserName} = initialize_server(),
+    run_benchmark("send message",
+        fun () ->
+            lists:foreach(fun (_) ->
+                server:send_message(ServerPid, pick_random(UserName), "Test")
+            end,
+            lists:seq(1, 10000))
+        end,
+        30).
+
+test_profile_seq() ->
+% Get timeline of 10000 users (repeated 30 times).
+    {ServerPid, UserName} = initialize_server(),
+    run_benchmark("profile",
+        fun () ->
+            lists:foreach(fun (_) ->
+                server:get_profile(ServerPid, pick_random(UserName))
+            end,
+            lists:seq(1, 10000))
+        end,
+        30).
+
+
+test_timeline() ->
+    NumberOfUsers = 5000,
+    NumberOfSubscriptions = 25,
+    NumberOfMessages = 10,
+    Threshold = 1,
+    io:format("Parameters:~n"),
+    io:format("Number of users: ~p~n", [NumberOfUsers]),
+    io:format("Number of subscriptions: ~p~n", [NumberOfSubscriptions]),
+    io:format("Number of messages: ~p~n", [NumberOfMessages]),
+    io:format("Numbers of clients per server: ~p~n", [Threshold]),
+    io:format("~n"),
+
+  
+   {ListsUserPids, InitServer} = initialize_server(Threshold, NumberOfUsers, NumberOfSubscriptions, NumberOfMessages),
+    
+    	Done = run_benchmark("timeline",
+        	fun () ->
+           		 lists:foreach(fun (_) ->
+			{PiD, User} = pick_random(ListsUserPids),
+               		 server:get_timeline(PiD, User)
+            	end,
+           	 lists:seq(1, 10000))
+        	end,
+        	30),
+	   cleanup(InitServer, Done).
+
+
+
+
+% Get timeline of 10000 users (repeated 30 times).
+test_timeline_thresholds() ->
+    %InitializedServers = initializeServers(),
+    NumberOfUsers = 1000,
+    NumberOfSubscriptions = 25,
+    NumberOfMessages = 10,
+    Thresholds = [1000, 500, 100, 10, 1],
     io:format("Parameters:~n"),
     io:format("Number of users: ~p~n", [NumberOfUsers]),
     io:format("Number of subscriptions: ~p~n", [NumberOfSubscriptions]),
@@ -215,7 +419,7 @@ test_send_message() ->
     NumberOfUsers = 5000,
     NumberOfSubscriptions = 25,
     NumberOfMessages = 10,
-    Thresholds = [6000, 3000, 1500, 1000, 500, 100, 10, 5, 1],
+    Thresholds = [1], %1 server, 5 servers, 50 servers, 500 servers, 5000 servers
 
     io:format("Parameters:~n"),
     io:format("Number of users: ~p~n", [NumberOfUsers]),
@@ -227,7 +431,7 @@ test_send_message() ->
 	io:format("------------ Threshold: ~p ------------ ~n", [Threshold]),
 	{ListsUserPids, InitServer} = initialize_server(Threshold, NumberOfUsers, NumberOfSubscriptions, NumberOfMessages),
     
-
+        
 
     Done = run_benchmark("send_message",
         fun () ->
@@ -243,3 +447,118 @@ test_send_message() ->
 	   end,
 
     lists:map(Func, Thresholds).
+
+
+
+test_send_message_latency_broadcasting() ->
+    NumberOfUsers = 5000,
+    NumberOfSubscriptions = 0,
+    NumberOfMessages = 10,
+    Thresholds = [1],
+
+    io:format("Parameters:~n"),
+    io:format("Number of users: ~p~n", [NumberOfUsers]),
+    io:format("Number of subscriptions: ~p~n", [NumberOfSubscriptions]),
+    io:format("Number of messages: ~p~n", [NumberOfMessages]),
+    io:format("~n"),
+
+    Func = fun(Threshold) ->
+	io:format("------------ Threshold: ~p ------------ ~n", [Threshold]),
+	{ListsUserPids, InitServer} = initialize_server(Threshold, NumberOfUsers, NumberOfSubscriptions, NumberOfMessages),
+	RandomSubscriber = pick_random(ListsUserPids),
+
+	%Elke user heeft exact 1 follower 
+	lists:foreach(fun({PID, USER}) -> 
+                                      {PiD, User} = pick_random(ListsUserPids),
+				      PID ! {PiD, new_follower, USER, User} end, 
+		      ListsUserPids),
+
+       Done = run_benchmark("send_message",
+        fun () ->
+            %lists:foreach(fun (_) ->
+		{PiD, User} = pick_random(ListsUserPids),
+                server:send_message(PiD, User, "Test")
+            %end,
+            %lists:seq(1, 10000))
+        end,
+        30),
+    cleanup(InitServer, Done)
+	
+	   end,
+
+    lists:map(Func, Thresholds).
+
+test_send_message_latency_broadcasting_10() ->
+    NumberOfUsers = 5000,
+    NumberOfSubscriptions = 0,
+    NumberOfMessages = 10,
+    Thresholds = [1],
+
+    io:format("Parameters:~n"),
+    io:format("Number of users: ~p~n", [NumberOfUsers]),
+    io:format("Number of subscriptions: ~p~n", [NumberOfSubscriptions]),
+    io:format("Number of messages: ~p~n", [NumberOfMessages]),
+    io:format("~n"),
+
+    Func = fun(Threshold) ->
+	io:format("------------ Threshold: ~p ------------ ~n", [Threshold]),
+	{ListsUserPids, InitServer} = initialize_server(Threshold, NumberOfUsers, NumberOfSubscriptions, NumberOfMessages),
+	RandomSubscriber = pick_random(ListsUserPids),
+
+	%Elke user heeft exact 1 follower 
+	lists:foreach(fun({PID, USER}) ->
+				      lists:foreach(fun (_) ->
+                                      {PiD, User} = pick_random(ListsUserPids),
+				      PID ! {PiD, new_follower, USER, User} 
+				       end,
+				       lists:seq(1, 10))
+		      end,
+		      ListsUserPids),
+
+       Done = run_benchmark("send_message",
+        fun () ->
+            %lists:foreach(fun (_) ->
+		{PiD, User} = pick_random(ListsUserPids),
+                server:send_message(PiD, User, "Test")
+            %end,
+            %lists:seq(1, 10000))
+        end,
+        30),
+    cleanup(InitServer, Done)
+	
+	   end,
+
+    lists:map(Func, Thresholds).
+
+test_send_message_latency_broadcasting_noFollower() ->
+    NumberOfUsers = 5000,
+    NumberOfSubscriptions = 0,
+    NumberOfMessages = 10,
+    Thresholds = [1],
+
+    io:format("Parameters:~n"),
+    io:format("Number of users: ~p~n", [NumberOfUsers]),
+    io:format("Number of subscriptions: ~p~n", [NumberOfSubscriptions]),
+    io:format("Number of messages: ~p~n", [NumberOfMessages]),
+    io:format("~n"),
+
+    Func = fun(Threshold) ->
+	io:format("------------ Threshold: ~p ------------ ~n", [Threshold]),
+	{ListsUserPids, InitServer} = initialize_server(Threshold, NumberOfUsers, NumberOfSubscriptions, NumberOfMessages),
+     %geen volgers 
+    Done = run_benchmark("send_message",
+        fun () ->
+            %lists:foreach(fun (_) ->
+		{PiD, User} = pick_random(ListsUserPids),
+                server:send_message(PiD, User, "Test")
+            %end,
+            %lists:seq(1, 10000))
+        end,
+        30),
+    cleanup(InitServer, Done)
+	
+	   end,
+
+    lists:map(Func, Thresholds).
+
+

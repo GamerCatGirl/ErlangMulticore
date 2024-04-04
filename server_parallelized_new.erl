@@ -155,12 +155,13 @@ server_actor(Users, RedirectServer) ->
             server_actor(Users, RedirectServer);
 
         {Sender, send_message, UserName, MessageText, Timestamp} ->
-            NewUsers = store_message(Users, {message, UserName, MessageText, Timestamp}),
-            Sender ! {self(), message_sent},
+            NewUsers = store_message(Users, {message, UserName, MessageText, Timestamp}, Sender),
+            %Sender ! {self(), message_sent},
             server_actor(NewUsers, RedirectServer);
 
 
 	{Sender, receive_message, ToUsername, FromUsername, Message} ->
+		
 		{user, ToUsername, TimeLine, Messages, FollowedBy} = get_user(ToUsername, Users),
 
 		%save messages in an ordered dictionary on time so they don't need to be sorted -> sort takes lots of time
@@ -176,6 +177,7 @@ server_actor(Users, RedirectServer) ->
 		
 		NewUser = {user, ToUsername, NewTimeLine, Messages, FollowedBy},
 		NewUsers = orddict:store(ToUsername, NewUser, Users),
+                Sender ! {self(), message_sent},
 		server_actor(NewUsers, RedirectServer);
 
         {Sender, get_timeline, UserName} ->
@@ -227,17 +229,24 @@ get_user(UserName, Users) ->
 
 
 % Modify `Users` to store `Message`.
-store_message(Users, Message) ->
+store_message(Users, Message, Sender) ->
     {message, UserName, _MessageText, _Timestamp} = Message,
     {user, Name, Subscriptions, Messages, FollowedBy} = get_user(UserName, Users),
     %Send message to followers
 
     sets:fold(fun({UN, SERVER}, _) -> 
-		   SERVER ! {self(), receive_message, UN, UserName, [Message]}
+		   SERVER ! {Sender, receive_message, UN, UserName, [Message]}
 
 	      end,
 	      [],
 	      FollowedBy),
+
+    NoFollowers = sets:is_empty(FollowedBy),
+ 
+
+    if NoFollowers -> Sender ! {self(), message_sent};
+    true -> done end,
+
 
     NewUser = {user, Name, Subscriptions, Messages ++ [Message], FollowedBy},
     orddict:store(UserName, NewUser, Users).

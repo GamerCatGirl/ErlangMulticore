@@ -1,0 +1,95 @@
+Parameters:
+Number of users: 5000
+Number of subscriptions: 25
+Number of messages: 10
+
+Starting benchmark profile: 1
+Wall clock time = 213.584 ms
+profile done
+Starting benchmark profile: 2
+Wall clock time = 208.364 ms
+profile done
+Starting benchmark profile: 3
+Wall clock time = 197.284 ms
+profile done
+Starting benchmark profile: 4
+Wall clock time = 188.85 ms
+profile done
+Starting benchmark profile: 5
+Wall clock time = 200.328 ms
+profile done
+Starting benchmark profile: 6
+Wall clock time = 195.446 ms
+profile done
+Starting benchmark profile: 7
+Wall clock time = 191.389 ms
+profile done
+Starting benchmark profile: 8
+Wall clock time = 207.445 ms
+profile done
+Starting benchmark profile: 9
+Wall clock time = 181.447 ms
+profile done
+Starting benchmark profile: 10
+Wall clock time = 189.952 ms
+profile done
+Starting benchmark profile: 11
+Wall clock time = 195.339 ms
+profile done
+Starting benchmark profile: 12
+Wall clock time = 191.186 ms
+profile done
+Starting benchmark profile: 13
+Wall clock time = 190.508 ms
+profile done
+Starting benchmark profile: 14
+Wall clock time = 199.352 ms
+profile done
+Starting benchmark profile: 15
+Wall clock time = 207.205 ms
+profile done
+Starting benchmark profile: 16
+Wall clock time = 195.127 ms
+profile done
+Starting benchmark profile: 17
+Wall clock time = 208.661 ms
+profile done
+Starting benchmark profile: 18
+Wall clock time = 203.149 ms
+profile done
+Starting benchmark profile: 19
+Wall clock time = 205.099 ms
+profile done
+Starting benchmark profile: 20
+Wall clock time = 183.797 ms
+profile done
+Starting benchmark profile: 21
+Wall clock time = 194.325 ms
+profile done
+Starting benchmark profile: 22
+Wall clock time = 188.15 ms
+profile done
+Starting benchmark profile: 23
+Wall clock time = 204.589 ms
+profile done
+Starting benchmark profile: 24
+Wall clock time = 199.352 ms
+profile done
+Starting benchmark profile: 25
+Wall clock time = 199.327 ms
+profile done
+Starting benchmark profile: 26
+Wall clock time = 187.892 ms
+profile done
+Starting benchmark profile: 27
+Wall clock time = 192.093 ms
+profile done
+Starting benchmark profile: 28
+Wall clock time = 197.999 ms
+profile done
+Starting benchmark profile: 29
+Wall clock time = 177.753 ms
+profile done
+Starting benchmark profile: 30
+Wall clock time = 188.126 ms
+profile done
