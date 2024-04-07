@@ -5,92 +5,122 @@ Number of messages: 10
 
 ------------ Threshold: 1 ------------ 
 Starting benchmark send_message: 1
-Wall clock time = 0.048 ms
+Wall clock time = 0.102 ms
+CPU time = 1872 ms
 send_message done
 Starting benchmark send_message: 2
-Wall clock time = 0.045 ms
+Wall clock time = 0.094 ms
+CPU time = 1 ms
 send_message done
 Starting benchmark send_message: 3
-Wall clock time = 0.025 ms
+Wall clock time = 0.057 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 4
-Wall clock time = 0.037 ms
+Wall clock time = 0.068 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 5
 Wall clock time = 0.058 ms
+CPU time = 1 ms
 send_message done
 Starting benchmark send_message: 6
-Wall clock time = 0.04 ms
+Wall clock time = 0.064 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 7
-Wall clock time = 0.02 ms
+Wall clock time = 0.059 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 8
-Wall clock time = 0.042 ms
+Wall clock time = 0.06 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 9
-Wall clock time = 0.041 ms
+Wall clock time = 0.071 ms
+CPU time = 1 ms
 send_message done
 Starting benchmark send_message: 10
-Wall clock time = 0.035 ms
+Wall clock time = 0.053 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 11
-Wall clock time = 0.037 ms
+Wall clock time = 0.08 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 12
-Wall clock time = 0.039 ms
+Wall clock time = 0.054 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 13
-Wall clock time = 0.039 ms
+Wall clock time = 0.063 ms
+CPU time = 1 ms
 send_message done
 Starting benchmark send_message: 14
-Wall clock time = 0.041 ms
+Wall clock time = 0.061 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 15
-Wall clock time = 0.041 ms
+Wall clock time = 0.046 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 16
-Wall clock time = 0.04 ms
+Wall clock time = 0.09 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 17
-Wall clock time = 0.038 ms
+Wall clock time = 0.065 ms
+CPU time = 1 ms
 send_message done
 Starting benchmark send_message: 18
-Wall clock time = 0.041 ms
+Wall clock time = 0.065 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 19
-Wall clock time = 0.021 ms
+Wall clock time = 0.058 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 20
-Wall clock time = 0.034 ms
+Wall clock time = 0.064 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 21
-Wall clock time = 0.038 ms
+Wall clock time = 0.056 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 22
-Wall clock time = 0.037 ms
+Wall clock time = 0.121 ms
+CPU time = 1 ms
 send_message done
 Starting benchmark send_message: 23
-Wall clock time = 0.042 ms
+Wall clock time = 0.06 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 24
-Wall clock time = 0.054 ms
+Wall clock time = 0.058 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 25
-Wall clock time = 0.036 ms
+Wall clock time = 0.147 ms
+CPU time = 1 ms
 send_message done
 Starting benchmark send_message: 26
-Wall clock time = 0.039 ms
+Wall clock time = 0.065 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 27
-Wall clock time = 0.019 ms
+Wall clock time = 0.061 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 28
-Wall clock time = 0.035 ms
+Wall clock time = 0.074 ms
+CPU time = 0 ms
 send_message done
 Starting benchmark send_message: 29
-Wall clock time = 0.038 ms
+Wall clock time = 0.055 ms
+CPU time = 1 ms
 send_message done
 Starting benchmark send_message: 30
-Wall clock time = 0.034 ms
+Wall clock time = 0.062 ms
+CPU time = 0 ms
 send_message done

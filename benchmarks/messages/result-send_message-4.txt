@@ -5,92 +5,122 @@ Number of messages: 10
 
 ------------ Threshold: 1 ------------ 
 Starting benchmark send_message: 1
-Wall clock time = 330.927 ms
+Wall clock time = 331.181 ms
+CPU time = 183709 ms
 send_message done
 Starting benchmark send_message: 2
-Wall clock time = 345.415 ms
+Wall clock time = 348.663 ms
+CPU time = 1018 ms
 send_message done
 Starting benchmark send_message: 3
-Wall clock time = 344.76 ms
+Wall clock time = 343.508 ms
+CPU time = 1005 ms
 send_message done
 Starting benchmark send_message: 4
-Wall clock time = 337.891 ms
+Wall clock time = 339.808 ms
+CPU time = 985 ms
 send_message done
 Starting benchmark send_message: 5
-Wall clock time = 336.576 ms
+Wall clock time = 341.094 ms
+CPU time = 985 ms
 send_message done
 Starting benchmark send_message: 6
-Wall clock time = 336.595 ms
+Wall clock time = 341.616 ms
+CPU time = 985 ms
 send_message done
 Starting benchmark send_message: 7
-Wall clock time = 341.564 ms
+Wall clock time = 342.626 ms
+CPU time = 992 ms
 send_message done
 Starting benchmark send_message: 8
-Wall clock time = 337.872 ms
+Wall clock time = 336.29 ms
+CPU time = 981 ms
 send_message done
 Starting benchmark send_message: 9
-Wall clock time = 336.949 ms
+Wall clock time = 337.618 ms
+CPU time = 983 ms
 send_message done
 Starting benchmark send_message: 10
-Wall clock time = 341.045 ms
+Wall clock time = 335.16 ms
+CPU time = 978 ms
 send_message done
 Starting benchmark send_message: 11
-Wall clock time = 333.424 ms
+Wall clock time = 337.359 ms
+CPU time = 970 ms
 send_message done
 Starting benchmark send_message: 12
-Wall clock time = 334.327 ms
+Wall clock time = 336.163 ms
+CPU time = 968 ms
 send_message done
 Starting benchmark send_message: 13
-Wall clock time = 337.085 ms
+Wall clock time = 335.578 ms
+CPU time = 971 ms
 send_message done
 Starting benchmark send_message: 14
-Wall clock time = 337.73 ms
+Wall clock time = 340.583 ms
+CPU time = 985 ms
 send_message done
 Starting benchmark send_message: 15
-Wall clock time = 339.62 ms
+Wall clock time = 340.811 ms
+CPU time = 984 ms
 send_message done
 Starting benchmark send_message: 16
-Wall clock time = 338.733 ms
+Wall clock time = 337.541 ms
+CPU time = 978 ms
 send_message done
 Starting benchmark send_message: 17
-Wall clock time = 339.533 ms
+Wall clock time = 351.645 ms
+CPU time = 1015 ms
 send_message done
 Starting benchmark send_message: 18
-Wall clock time = 336.787 ms
+Wall clock time = 356.449 ms
+CPU time = 1011 ms
 send_message done
 Starting benchmark send_message: 19
-Wall clock time = 337.38 ms
+Wall clock time = 339.541 ms
+CPU time = 979 ms
 send_message done
 Starting benchmark send_message: 20
-Wall clock time = 342.764 ms
+Wall clock time = 352.001 ms
+CPU time = 1019 ms
 send_message done
 Starting benchmark send_message: 21
-Wall clock time = 340.218 ms
+Wall clock time = 339.055 ms
+CPU time = 985 ms
 send_message done
 Starting benchmark send_message: 22
-Wall clock time = 343.996 ms
+Wall clock time = 340.806 ms
+CPU time = 990 ms
 send_message done
 Starting benchmark send_message: 23
-Wall clock time = 341.847 ms
+Wall clock time = 340.054 ms
+CPU time = 992 ms
 send_message done
 Starting benchmark send_message: 24
-Wall clock time = 336.641 ms
+Wall clock time = 338.611 ms
+CPU time = 977 ms
 send_message done
 Starting benchmark send_message: 25
-Wall clock time = 339.773 ms
+Wall clock time = 333.802 ms
+CPU time = 968 ms
 send_message done
 Starting benchmark send_message: 26
-Wall clock time = 335.575 ms
+Wall clock time = 338.316 ms
+CPU time = 978 ms
 send_message done
 Starting benchmark send_message: 27
-Wall clock time = 337.631 ms
+Wall clock time = 332.699 ms
+CPU time = 962 ms
 send_message done
 Starting benchmark send_message: 28
-Wall clock time = 339.193 ms
+Wall clock time = 333.716 ms
+CPU time = 962 ms
 send_message done
 Starting benchmark send_message: 29
-Wall clock time = 336.467 ms
+Wall clock time = 338.505 ms
+CPU time = 977 ms
 send_message done
 Starting benchmark send_message: 30
-Wall clock time = 343.976 ms
+Wall clock time = 339.689 ms
+CPU time = 984 ms
 send_message done

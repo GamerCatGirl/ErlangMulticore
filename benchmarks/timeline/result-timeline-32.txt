@@ -5,92 +5,122 @@ Number of messages: 10
 Numbers of clients per server: 1
 
 Starting benchmark timeline: 1
-Wall clock time = 514.003 ms
+Wall clock time = 527.169 ms
+CPU time = 187135 ms
 timeline done
 Starting benchmark timeline: 2
-Wall clock time = 486.612 ms
+Wall clock time = 500.457 ms
+CPU time = 562 ms
 timeline done
 Starting benchmark timeline: 3
-Wall clock time = 479.382 ms
+Wall clock time = 498.984 ms
+CPU time = 562 ms
 timeline done
 Starting benchmark timeline: 4
-Wall clock time = 478.82 ms
+Wall clock time = 515.605 ms
+CPU time = 564 ms
 timeline done
 Starting benchmark timeline: 5
-Wall clock time = 479.117 ms
+Wall clock time = 514.611 ms
+CPU time = 573 ms
 timeline done
 Starting benchmark timeline: 6
-Wall clock time = 477.39 ms
+Wall clock time = 495.783 ms
+CPU time = 557 ms
 timeline done
 Starting benchmark timeline: 7
-Wall clock time = 471.617 ms
+Wall clock time = 504.481 ms
+CPU time = 565 ms
 timeline done
 Starting benchmark timeline: 8
-Wall clock time = 466.208 ms
+Wall clock time = 490.602 ms
+CPU time = 537 ms
 timeline done
 Starting benchmark timeline: 9
-Wall clock time = 461.709 ms
+Wall clock time = 483.048 ms
+CPU time = 544 ms
 timeline done
 Starting benchmark timeline: 10
-Wall clock time = 448.353 ms
+Wall clock time = 471.375 ms
+CPU time = 514 ms
 timeline done
 Starting benchmark timeline: 11
-Wall clock time = 442.105 ms
+Wall clock time = 464.205 ms
+CPU time = 494 ms
 timeline done
 Starting benchmark timeline: 12
-Wall clock time = 439.861 ms
+Wall clock time = 456.526 ms
+CPU time = 498 ms
 timeline done
 Starting benchmark timeline: 13
-Wall clock time = 438.925 ms
+Wall clock time = 458.822 ms
+CPU time = 494 ms
 timeline done
 Starting benchmark timeline: 14
-Wall clock time = 436.667 ms
+Wall clock time = 458.027 ms
+CPU time = 489 ms
 timeline done
 Starting benchmark timeline: 15
-Wall clock time = 438.204 ms
+Wall clock time = 453.429 ms
+CPU time = 472 ms
 timeline done
 Starting benchmark timeline: 16
-Wall clock time = 433.117 ms
+Wall clock time = 448.964 ms
+CPU time = 472 ms
 timeline done
 Starting benchmark timeline: 17
-Wall clock time = 435.038 ms
+Wall clock time = 445.104 ms
+CPU time = 457 ms
 timeline done
 Starting benchmark timeline: 18
-Wall clock time = 430.615 ms
+Wall clock time = 446.381 ms
+CPU time = 455 ms
 timeline done
 Starting benchmark timeline: 19
-Wall clock time = 436.66 ms
+Wall clock time = 442.489 ms
+CPU time = 448 ms
 timeline done
 Starting benchmark timeline: 20
-Wall clock time = 421.621 ms
+Wall clock time = 448.139 ms
+CPU time = 452 ms
 timeline done
 Starting benchmark timeline: 21
-Wall clock time = 424.82 ms
+Wall clock time = 435.852 ms
+CPU time = 438 ms
 timeline done
 Starting benchmark timeline: 22
-Wall clock time = 420.975 ms
+Wall clock time = 443.582 ms
+CPU time = 446 ms
 timeline done
 Starting benchmark timeline: 23
-Wall clock time = 423.292 ms
+Wall clock time = 433.705 ms
+CPU time = 437 ms
 timeline done
 Starting benchmark timeline: 24
-Wall clock time = 418.343 ms
+Wall clock time = 434.579 ms
+CPU time = 438 ms
 timeline done
 Starting benchmark timeline: 25
-Wall clock time = 424.454 ms
+Wall clock time = 431.374 ms
+CPU time = 434 ms
 timeline done
 Starting benchmark timeline: 26
-Wall clock time = 420.689 ms
+Wall clock time = 427.856 ms
+CPU time = 434 ms
 timeline done
 Starting benchmark timeline: 27
-Wall clock time = 419.918 ms
+Wall clock time = 424.461 ms
+CPU time = 431 ms
 timeline done
 Starting benchmark timeline: 28
-Wall clock time = 417.782 ms
+Wall clock time = 420.259 ms
+CPU time = 426 ms
 timeline done
 Starting benchmark timeline: 29
-Wall clock time = 417.625 ms
+Wall clock time = 426.033 ms
+CPU time = 431 ms
 timeline done
 Starting benchmark timeline: 30
-Wall clock time = 416.874 ms
+Wall clock time = 423.547 ms
+CPU time = 428 ms
 timeline done

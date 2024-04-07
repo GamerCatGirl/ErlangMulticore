@@ -59,10 +59,10 @@ run_benchmark_once(Name, Fun, N) ->
     % that each individual measurement lasts for at least several seconds.
     % [1] http://erlang.org/doc/efficiency_guide/profiling.html
     WallClockTime = timer:now_diff(os:timestamp(), StartTime),
-    %{_, CpuTime} = statistics(runtime),
+    {_, CpuTime} = statistics(runtime),
     io:format("Wall clock time = ~p ms~n", [WallClockTime / 1000.0]),
    
-    %io:format("CPU time = ~p ms~n", [CpuTime]),
+    io:format("CPU time = ~p ms~n", [CpuTime]),
     io:format("~s done~n", [Name]).
 
 %% Benchmarks
@@ -511,7 +511,7 @@ test_send_message_latency_broadcasting_10() ->
                                       {PiD, User} = pick_random(ListsUserPids),
 				      PID ! {PiD, new_follower, USER, User} 
 				       end,
-				       lists:seq(1, 10))
+				       lists:seq(1, 500))
 		      end,
 		      ListsUserPids),
 

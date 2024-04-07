@@ -98,6 +98,9 @@ register_and_redirect(PiDs, PiDtoFill, TreshHoldUsers) ->
 			% Make the server back available for new requests 
 			register_and_redirect(NewPiDs, NewPidtoFill, TreshHoldUsers);
 
+		{Sender, get_profile, UserName} ->
+			erlang:display("TODO");
+
 
 	         {Sender, follow, UserName, UserNameToFollow} ->
 			%Get server id of user to follow 
