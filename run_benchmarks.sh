@@ -12,15 +12,15 @@ set -euo pipefail
 
 date
 #Firefly has 64 physical cores, but 128 logical cores
-#echo "---"
-#echo "> test_timeline_seq, 1 threads"
-#erl +S 1 -noshell -s benchmark test_timeline_seq -s init stop > "benchmarks/seq/result-timeline.txt"
-#echo "---"
-#echo "> test_profile_seq, 1 threads"
-#erl +S 1 -noshell -s benchmark test_profile_seq -s init stop > "benchmarks/seq/result-profile.txt"
-#echo "---"
-#echo "> test_send_message_seq, 1 threads"
-#erl +S 1 -noshell -s benchmark test_send_message_seq -s init stop > "benchmarks/seq/result-message.txt"
+echo "---"
+echo "> test_timeline_seq, 1 threads"
+erl +S 1 -noshell -s benchmark test_timeline_seq -s init stop > "benchmarks/seq/result-timeline.txt"
+echo "---"
+echo "> test_profile_seq, 1 threads"
+erl +S 1 -noshell -s benchmark test_profile_seq -s init stop > "benchmarks/seq/result-profile.txt"
+echo "---"
+echo "> test_send_message_seq, 1 threads"
+erl +S 1 -noshell -s benchmark test_send_message_seq -s init stop > "benchmarks/seq/result-message.txt"
 
 for i in 1 2 4 8 16 32 64 128
 do
@@ -44,9 +44,9 @@ do
     #echo "---"
     #echo "> test_send_message_latency_broadcasting, $i threads"
     #erl +S $i -noshell -s benchmark test_send_message_latency_broadcasting -s init stop > "benchmarks/latency/result-message_latency-$i.txt"
-    echo "---"
-    echo "> test_send_message_latency_broadcasting, $i threads"
-    erl +S $i -noshell -s benchmark test_send_message_latency_broadcasting_10 -s init stop > "benchmarks/latency/result-message_latency_500follower-$i.txt"
+    #echo "---"
+    #echo "> test_send_message_latency_broadcasting, $i threads"
+    #erl +S $i -noshell -s benchmark test_send_message_latency_broadcasting_10 -s init stop > "benchmarks/latency/result-message_latency_500follower-$i.txt"
 
     #echo "---"
     #echo "> test_send_message_latency_broadcasting_noFollower, $i threads"
@@ -55,9 +55,9 @@ do
     #echo "> test_timeline_subs, $i threads"
     #erl +S $i -noshell -s benchmark test_timeline_subs -s init stop > "benchmarks/subs/result-timeline-$i.txt"
 
-    echo "--------- $i Threads done with time ----------- " 
-    date 
-    echo "------------------------------------------------"
+    #echo "--------- $i Threads done with time ----------- " 
+    #date 
+    #echo "------------------------------------------------"
 
 done
 date
