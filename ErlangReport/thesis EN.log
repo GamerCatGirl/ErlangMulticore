@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.5)  7 APR 2024 10:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.5)  7 APR 2024 20:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -696,7 +696,7 @@ Overfull \hbox (16.18217pt too wide) in paragraph at lines 19--19
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.22 ...lts Experiment 3}{24}{subsubsection.3.3.6}
+l.22 ...lts Experiment 3}{26}{subsubsection.3.3.6}
                                                   % [1
 
 ])
@@ -704,260 +704,265 @@ l.22 ...lts Experiment 3}{24}{subsubsection.3.3.6}
 \openout5 = `"thesis EN.toc"'.
 
  [2]
-<Architecture.pdf, id=175, 591.16856pt x 617.4267pt>
+<Architecture.pdf, id=181, 591.16856pt x 617.4267pt>
 File: Architecture.pdf Graphic file (type pdf)
 <use Architecture.pdf>
-Package pdftex.def Info: Architecture.pdf  used on input line 58.
+Package pdftex.def Info: Architecture.pdf  used on input line 53.
 (pdftex.def)             Requested size: 418.25368pt x 436.83095pt.
  [3]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 65.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 60.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 60.
  [4 <./Architecture.pdf>] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 105--110
+Underfull \hbox (badness 10000) in paragraph at lines 96--101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--116
+Underfull \hbox (badness 10000) in paragraph at lines 102--107
 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 133--136
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 130--133
 
  []
 
-[7]
-Overfull \hbox (9.77504pt too wide) in paragraph at lines 158--158
+
+Overfull \hbox (9.77504pt too wide) in paragraph at lines 155--155
 \OT1/cmr/bx/n/10 are the pro- por-tions of dif-fer-ent re-quests? How many users/messages/followers
  []
 
 [8{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<Images/Speedup(U:A)Box.png, id=216, 891.8118pt x 364.2408pt>
+<Images/Speedup(U:A)Box.png, id=222, 891.8118pt x 364.2408pt>
 File: Images/Speedup(U:A)Box.png Graphic file (type png)
 <use Images/Speedup(U:A)Box.png>
-Package pdftex.def Info: Images/Speedup(U:A)Box.png  used on input line 182.
+Package pdftex.def Info: Images/Speedup(U:A)Box.png  used on input line 189.
 (pdftex.def)             Requested size: 418.25368pt x 170.82637pt.
-<Images/Speedup(U:A).png, id=218, 614.295pt x 397.485pt>
+ [9]
+<Images/Speedup(U:A).png, id=228, 614.295pt x 397.485pt>
 File: Images/Speedup(U:A).png Graphic file (type png)
 <use Images/Speedup(U:A).png>
-Package pdftex.def Info: Images/Speedup(U:A).png  used on input line 187.
+Package pdftex.def Info: Images/Speedup(U:A).png  used on input line 196.
 (pdftex.def)             Requested size: 418.25368pt x 270.638pt.
-<Images/SpeedupStdURFirefly.png, id=219, 735.7086pt x 397.485pt>
+ [10 <./Images/Speedup(U:A)Box.png>]
+<Images/SpeedupStdURFirefly.png, id=235, 735.7086pt x 397.485pt>
 File: Images/SpeedupStdURFirefly.png Graphic file (type png)
 <use Images/SpeedupStdURFirefly.png>
-Package pdftex.def Info: Images/SpeedupStdURFirefly.png  used on input line 192.
+Package pdftex.def Info: Images/SpeedupStdURFirefly.png  used on input line 203.
 (pdftex.def)             Requested size: 418.25368pt x 225.97441pt.
- [9 <./Images/Speedup(U:A)Box.png>]
-<Images/SpeedupStdUR.png, id=226, 735.7086pt x 397.485pt>
+<Images/SpeedupStdUR.png, id=236, 735.7086pt x 397.485pt>
 File: Images/SpeedupStdUR.png Graphic file (type png)
 <use Images/SpeedupStdUR.png>
-Package pdftex.def Info: Images/SpeedupStdUR.png  used on input line 197.
+Package pdftex.def Info: Images/SpeedupStdUR.png  used on input line 208.
 (pdftex.def)             Requested size: 418.25368pt x 225.97441pt.
-<Images/SpeedupURBoxFirefly.png, id=227, 891.8118pt x 364.2408pt>
-File: Images/SpeedupURBoxFirefly.png Graphic file (type png)
-<use Images/SpeedupURBoxFirefly.png>
-Package pdftex.def Info: Images/SpeedupURBoxFirefly.png  used on input line 202.
-(pdftex.def)             Requested size: 418.25368pt x 170.82637pt.
- [10 <./Images/Speedup(U:A).png> <./Images/SpeedupStdURFirefly.png>]
-<Images/SpeedupURBox.png, id=236, 891.8118pt x 364.2408pt>
-File: Images/SpeedupURBox.png Graphic file (type png)
-<use Images/SpeedupURBox.png>
-Package pdftex.def Info: Images/SpeedupURBox.png  used on input line 207.
-(pdftex.def)             Requested size: 418.25368pt x 170.82637pt.
-<Images/SpeedupURMeanFirefly.png, id=237, 622.9674pt x 397.485pt>
-File: Images/SpeedupURMeanFirefly.png Graphic file (type png)
-<use Images/SpeedupURMeanFirefly.png>
-Package pdftex.def Info: Images/SpeedupURMeanFirefly.png  used on input line 212.
-(pdftex.def)             Requested size: 418.25368pt x 266.87762pt.
- [11 <./Images/SpeedupStdUR.png> <./Images/SpeedupURBoxFirefly.png>]
-<Images/SpeedupURMean.png, id=246, 617.1858pt x 397.485pt>
-File: Images/SpeedupURMean.png Graphic file (type png)
-<use Images/SpeedupURMean.png>
-Package pdftex.def Info: Images/SpeedupURMean.png  used on input line 217.
-(pdftex.def)             Requested size: 418.25368pt x 269.37645pt.
-<Images/SpeedupURMeanFireflyCom.png, id=247, 620.0766pt x 397.485pt>
+ [11 <./Images/Speedup(U:A).png>] [12 <./Images/SpeedupStdURFirefly.png> <./Images/SpeedupStdUR.png>]
+<Images/SpeedupURMeanFireflyCom.png, id=252, 620.0766pt x 397.485pt>
 File: Images/SpeedupURMeanFireflyCom.png Graphic file (type png)
 <use Images/SpeedupURMeanFireflyCom.png>
-Package pdftex.def Info: Images/SpeedupURMeanFireflyCom.png  used on input line 222.
+Package pdftex.def Info: Images/SpeedupURMeanFireflyCom.png  used on input line 217.
 (pdftex.def)             Requested size: 418.25368pt x 268.1149pt.
- [12 <./Images/SpeedupURBox.png> <./Images/SpeedupURMeanFirefly.png>]
-<Images/SpeedupURMeanCom.png, id=257, 614.295pt x 397.485pt>
+<Images/SpeedupURMeanCom.png, id=253, 614.295pt x 397.485pt>
 File: Images/SpeedupURMeanCom.png Graphic file (type png)
 <use Images/SpeedupURMeanCom.png>
-Package pdftex.def Info: Images/SpeedupURMeanCom.png  used on input line 227.
+Package pdftex.def Info: Images/SpeedupURMeanCom.png  used on input line 223.
 (pdftex.def)             Requested size: 418.25368pt x 270.638pt.
- [13 <./Images/SpeedupURMean.png>] [14 <./Images/SpeedupURMeanFireflyCom.png>]
-<Images/LatencyStdFirefly.png, id=270, 732.0951pt x 397.485pt>
+ [13 <./Images/SpeedupURMeanFireflyCom.png>]
+<Images/SpeedupSeq.png, id=260, 620.0766pt x 397.485pt>
+File: Images/SpeedupSeq.png Graphic file (type png)
+<use Images/SpeedupSeq.png>
+Package pdftex.def Info: Images/SpeedupSeq.png  used on input line 229.
+(pdftex.def)             Requested size: 418.25368pt x 268.1149pt.
+ [14 <./Images/SpeedupURMeanCom.png>]
+<Images/LatencyStdFirefly.png, id=267, 732.0951pt x 397.485pt>
 File: Images/LatencyStdFirefly.png Graphic file (type png)
 <use Images/LatencyStdFirefly.png>
-Package pdftex.def Info: Images/LatencyStdFirefly.png  used on input line 234.
+Package pdftex.def Info: Images/LatencyStdFirefly.png  used on input line 239.
 (pdftex.def)             Requested size: 418.25368pt x 227.09647pt.
-<Images/LatencyStd.png, id=271, 727.0362pt x 393.8715pt>
+ [15 <./Images/SpeedupSeq.png>]
+<Images/LatencyStd.png, id=274, 727.0362pt x 393.8715pt>
 File: Images/LatencyStd.png Graphic file (type png)
 <use Images/LatencyStd.png>
-Package pdftex.def Info: Images/LatencyStd.png  used on input line 239.
+Package pdftex.def Info: Images/LatencyStd.png  used on input line 245.
 (pdftex.def)             Requested size: 418.25368pt x 226.58853pt.
- [15 <./Images/SpeedupURMeanCom.png>]
-<Images/LatencyBoxFirefly.png, id=278, 1210.5225pt x 569.4876pt>
+<Images/LatencyBoxFirefly.png, id=275, 1210.5225pt x 569.4876pt>
 File: Images/LatencyBoxFirefly.png Graphic file (type png)
 <use Images/LatencyBoxFirefly.png>
-Package pdftex.def Info: Images/LatencyBoxFirefly.png  used on input line 244.
+Package pdftex.def Info: Images/LatencyBoxFirefly.png  used on input line 251.
 (pdftex.def)             Requested size: 418.25368pt x 196.76888pt.
-<Images/LatencyBox.png, id=279, 1216.3041pt x 569.4876pt>
+ [16 <./Images/LatencyStdFirefly.png> <./Images/LatencyStd.png>]
+<Images/LatencyBox.png, id=284, 1216.3041pt x 569.4876pt>
 File: Images/LatencyBox.png Graphic file (type png)
 <use Images/LatencyBox.png>
-Package pdftex.def Info: Images/LatencyBox.png  used on input line 249.
+Package pdftex.def Info: Images/LatencyBox.png  used on input line 256.
 (pdftex.def)             Requested size: 418.25368pt x 195.8304pt.
- [16 <./Images/LatencyStdFirefly.png> <./Images/LatencyStd.png>]
-<Images/LatencyProfileFirefly.png, id=288, 620.0766pt x 397.485pt>
-File: Images/LatencyProfileFirefly.png Graphic file (type png)
-<use Images/LatencyProfileFirefly.png>
-Package pdftex.def Info: Images/LatencyProfileFirefly.png  used on input line 254.
-(pdftex.def)             Requested size: 418.25368pt x 268.1149pt.
-<Images/LatencyProfile.png, id=289, 620.0766pt x 397.485pt>
-File: Images/LatencyProfile.png Graphic file (type png)
-<use Images/LatencyProfile.png>
-Package pdftex.def Info: Images/LatencyProfile.png  used on input line 259.
+<Images/LatencyFirefly.png, id=285, 620.0766pt x 397.485pt>
+File: Images/LatencyFirefly.png Graphic file (type png)
+<use Images/LatencyFirefly.png>
+Package pdftex.def Info: Images/LatencyFirefly.png  used on input line 262.
 (pdftex.def)             Requested size: 418.25368pt x 268.1149pt.
  [17 <./Images/LatencyBoxFirefly.png> <./Images/LatencyBox.png>]
-<Images/ThroughputStdFirefly.png, id=298, 729.2043pt x 397.485pt>
+<Images/Latency.png, id=295, 620.0766pt x 397.485pt>
+File: Images/Latency.png Graphic file (type png)
+<use Images/Latency.png>
+Package pdftex.def Info: Images/Latency.png  used on input line 267.
+(pdftex.def)             Requested size: 418.25368pt x 268.1149pt.
+ [18 <./Images/LatencyFirefly.png>]
+<Images/LatencyProfileFirefly.png, id=303, 620.0766pt x 397.485pt>
+File: Images/LatencyProfileFirefly.png Graphic file (type png)
+<use Images/LatencyProfileFirefly.png>
+Package pdftex.def Info: Images/LatencyProfileFirefly.png  used on input line 276.
+(pdftex.def)             Requested size: 418.25368pt x 268.1149pt.
+<Images/LatencyProfile.png, id=304, 620.0766pt x 397.485pt>
+File: Images/LatencyProfile.png Graphic file (type png)
+<use Images/LatencyProfile.png>
+Package pdftex.def Info: Images/LatencyProfile.png  used on input line 281.
+(pdftex.def)             Requested size: 418.25368pt x 268.1149pt.
+ [19 <./Images/Latency.png>] [20 <./Images/LatencyProfileFirefly.png>]
+<Images/ThroughputStdFirefly.png, id=317, 729.2043pt x 397.485pt>
 File: Images/ThroughputStdFirefly.png Graphic file (type png)
 <use Images/ThroughputStdFirefly.png>
-Package pdftex.def Info: Images/ThroughputStdFirefly.png  used on input line 264.
+Package pdftex.def Info: Images/ThroughputStdFirefly.png  used on input line 290.
 (pdftex.def)             Requested size: 418.25368pt x 227.98804pt.
- [18 <./Images/LatencyProfileFirefly.png>]
-<Images/ThroughputStd.png, id=307, 724.1454pt x 393.8715pt>
+ [21 <./Images/LatencyProfile.png>]
+<Images/ThroughputStd.png, id=324, 724.1454pt x 393.8715pt>
 File: Images/ThroughputStd.png Graphic file (type png)
 <use Images/ThroughputStd.png>
-Package pdftex.def Info: Images/ThroughputStd.png  used on input line 270.
+Package pdftex.def Info: Images/ThroughputStd.png  used on input line 297.
 (pdftex.def)             Requested size: 418.25368pt x 227.49605pt.
- [19 <./Images/LatencyProfile.png> <./Images/ThroughputStdFirefly.png>]
-<Images/ThroughputBoxFirefly.png, id=316, 1213.4133pt x 569.4876pt>
+ [22 <./Images/ThroughputStdFirefly.png> <./Images/ThroughputStd.png>]
+<Images/ThroughputBoxFirefly.png, id=333, 1213.4133pt x 569.4876pt>
 File: Images/ThroughputBoxFirefly.png Graphic file (type png)
 <use Images/ThroughputBoxFirefly.png>
-Package pdftex.def Info: Images/ThroughputBoxFirefly.png  used on input line 276.
+Package pdftex.def Info: Images/ThroughputBoxFirefly.png  used on input line 304.
 (pdftex.def)             Requested size: 418.25368pt x 196.29094pt.
-<Images/ThroughputBox.png, id=317, 1213.4133pt x 569.4876pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--315
+
+ []
+
+<Images/ThroughputBox.png, id=334, 1213.4133pt x 569.4876pt>
 File: Images/ThroughputBox.png Graphic file (type png)
 <use Images/ThroughputBox.png>
-Package pdftex.def Info: Images/ThroughputBox.png  used on input line 281.
+Package pdftex.def Info: Images/ThroughputBox.png  used on input line 320.
 (pdftex.def)             Requested size: 418.25368pt x 196.29094pt.
- [20 <./Images/ThroughputStd.png> <./Images/ThroughputBoxFirefly.png>]
-<Images/ThroughputPtofileFirefly.png, id=326, 617.1858pt x 397.485pt>
-File: Images/ThroughputPtofileFirefly.png Graphic file (type png)
-<use Images/ThroughputPtofileFirefly.png>
-Package pdftex.def Info: Images/ThroughputPtofileFirefly.png  used on input line 287.
+[23 <./Images/ThroughputBoxFirefly.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 324--330
+
+ []
+
+<Images/Throughput.png, id=341, 617.1858pt x 397.485pt>
+File: Images/Throughput.png Graphic file (type png)
+<use Images/Throughput.png>
+Package pdftex.def Info: Images/Throughput.png  used on input line 336.
 (pdftex.def)             Requested size: 418.25368pt x 269.37645pt.
-<Images/ThroughputMessageFirefly.png, id=327, 622.9674pt x 397.485pt>
-File: Images/ThroughputMessageFirefly.png Graphic file (type png)
-<use Images/ThroughputMessageFirefly.png>
-Package pdftex.def Info: Images/ThroughputMessageFirefly.png  used on input line 292.
-(pdftex.def)             Requested size: 418.25368pt x 266.87762pt.
-<Images/ThroughputProfile.png, id=328, 617.1858pt x 397.485pt>
-File: Images/ThroughputProfile.png Graphic file (type png)
-<use Images/ThroughputProfile.png>
-Package pdftex.def Info: Images/ThroughputProfile.png  used on input line 297.
-(pdftex.def)             Requested size: 418.25368pt x 269.37645pt.
- [21 <./Images/ThroughputBox.png> <./Images/ThroughputPtofileFirefly.png>]
-<Images/ThroughputMessage.png, id=337, 617.1858pt x 397.485pt>
-File: Images/ThroughputMessage.png Graphic file (type png)
-<use Images/ThroughputMessage.png>
-Package pdftex.def Info: Images/ThroughputMessage.png  used on input line 302.
-(pdftex.def)             Requested size: 418.25368pt x 269.37645pt.
- [22 <./Images/ThroughputMessageFirefly.png>] [23 <./Images/ThroughputProfile.png>]
-<Images/ErrorBarsLatency.png, id=350, 738.5994pt x 397.485pt>
+[24 <./Images/ThroughputBox.png>]
+<Images/ErrorBarsLatency.png, id=349, 738.5994pt x 397.485pt>
 File: Images/ErrorBarsLatency.png Graphic file (type png)
 <use Images/ErrorBarsLatency.png>
-Package pdftex.def Info: Images/ErrorBarsLatency.png  used on input line 309.
+Package pdftex.def Info: Images/ErrorBarsLatency.png  used on input line 345.
 (pdftex.def)             Requested size: 418.25368pt x 225.08284pt.
-<Images/ErrorBarsLatencyFireFly.png, id=351, 727.0362pt x 393.8715pt>
+<Images/ErrorBarsLatencyFireFly.png, id=350, 727.0362pt x 393.8715pt>
 File: Images/ErrorBarsLatencyFireFly.png Graphic file (type png)
 <use Images/ErrorBarsLatencyFireFly.png>
-Package pdftex.def Info: Images/ErrorBarsLatencyFireFly.png  used on input line 314.
+Package pdftex.def Info: Images/ErrorBarsLatencyFireFly.png  used on input line 350.
 (pdftex.def)             Requested size: 418.25368pt x 226.58853pt.
-<Images/ErrorBarsLatencyFull.png, id=352, 723.4227pt x 397.485pt>
+ [25 <./Images/Throughput.png>]
+<Images/ErrorBarsLatencyFull.png, id=357, 723.4227pt x 397.485pt>
 File: Images/ErrorBarsLatencyFull.png Graphic file (type png)
 <use Images/ErrorBarsLatencyFull.png>
-Package pdftex.def Info: Images/ErrorBarsLatencyFull.png  used on input line 319.
+Package pdftex.def Info: Images/ErrorBarsLatencyFull.png  used on input line 356.
 (pdftex.def)             Requested size: 418.25368pt x 229.81364pt.
- [24 <./Images/ThroughputMessage.png> <./Images/ErrorBarsLatency.png>]
-<Images/SendingMessageLatencyBox.png, id=362, 891.8118pt x 364.2408pt>
+ [26 <./Images/ErrorBarsLatency.png> <./Images/ErrorBarsLatencyFireFly.png>]
+<Images/SendingMessageLatencyBox.png, id=366, 891.8118pt x 364.2408pt>
 File: Images/SendingMessageLatencyBox.png Graphic file (type png)
 <use Images/SendingMessageLatencyBox.png>
-Package pdftex.def Info: Images/SendingMessageLatencyBox.png  used on input line 325.
+Package pdftex.def Info: Images/SendingMessageLatencyBox.png  used on input line 363.
 (pdftex.def)             Requested size: 418.25368pt x 170.82637pt.
-<Images/SendingMessageLatencyBoxFireFly.png, id=363, 891.8118pt x 364.2408pt>
+<Images/SendingMessageLatencyBoxFireFly.png, id=367, 891.8118pt x 364.2408pt>
 File: Images/SendingMessageLatencyBoxFireFly.png Graphic file (type png)
 <use Images/SendingMessageLatencyBoxFireFly.png>
-Package pdftex.def Info: Images/SendingMessageLatencyBoxFireFly.png  used on input line 330.
+Package pdftex.def Info: Images/SendingMessageLatencyBoxFireFly.png  used on input line 369.
 (pdftex.def)             Requested size: 418.25368pt x 170.82637pt.
- [25 <./Images/ErrorBarsLatencyFireFly.png> <./Images/ErrorBarsLatencyFull.png>]
-<Images/SendingMessageBox10Follower.png, id=372, 891.8118pt x 364.2408pt>
+ [27 <./Images/ErrorBarsLatencyFull.png> <./Images/SendingMessageLatencyBox.png>]
+<Images/SendingMessageBox10Follower.png, id=376, 891.8118pt x 364.2408pt>
 File: Images/SendingMessageBox10Follower.png Graphic file (type png)
 <use Images/SendingMessageBox10Follower.png>
-Package pdftex.def Info: Images/SendingMessageBox10Follower.png  used on input line 336.
+Package pdftex.def Info: Images/SendingMessageBox10Follower.png  used on input line 376.
 (pdftex.def)             Requested size: 418.25368pt x 170.82637pt.
- [26 <./Images/SendingMessageLatencyBox.png> <./Images/SendingMessageLatencyBoxFireFly.png>]
-<Images/SendingMessageBox20Follower.png, id=381, 891.8118pt x 364.2408pt>
+ [28 <./Images/SendingMessageLatencyBoxFireFly.png>]
+<Images/SendingMessageBox20Follower.png, id=383, 891.8118pt x 364.2408pt>
 File: Images/SendingMessageBox20Follower.png Graphic file (type png)
 <use Images/SendingMessageBox20Follower.png>
-Package pdftex.def Info: Images/SendingMessageBox20Follower.png  used on input line 342.
+Package pdftex.def Info: Images/SendingMessageBox20Follower.png  used on input line 382.
 (pdftex.def)             Requested size: 418.25368pt x 170.82637pt.
-<Images/SendingMessageBox50Followers.png, id=382, 891.8118pt x 364.2408pt>
+<Images/SendingMessageBox50Followers.png, id=384, 891.8118pt x 364.2408pt>
 File: Images/SendingMessageBox50Followers.png Graphic file (type png)
 <use Images/SendingMessageBox50Followers.png>
-Package pdftex.def Info: Images/SendingMessageBox50Followers.png  used on input line 348.
+Package pdftex.def Info: Images/SendingMessageBox50Followers.png  used on input line 388.
 (pdftex.def)             Requested size: 418.25368pt x 170.82637pt.
-<Images/SendingMessageBox100Follower.png, id=383, 891.8118pt x 364.2408pt>
+<Images/SendingMessageBox100Follower.png, id=385, 891.8118pt x 364.2408pt>
 File: Images/SendingMessageBox100Follower.png Graphic file (type png)
 <use Images/SendingMessageBox100Follower.png>
-Package pdftex.def Info: Images/SendingMessageBox100Follower.png  used on input line 353.
+Package pdftex.def Info: Images/SendingMessageBox100Follower.png  used on input line 393.
 (pdftex.def)             Requested size: 418.25368pt x 170.82637pt.
- [27 <./Images/SendingMessageBox10Follower.png> <./Images/SendingMessageBox20Follower.png>]
-<Images/SendingMessageBox500Follower.png, id=392, 891.8118pt x 364.2408pt>
+ [29 <./Images/SendingMessageBox10Follower.png> <./Images/SendingMessageBox20Follower.png>]
+<Images/SendingMessageBox500Follower.png, id=394, 891.8118pt x 364.2408pt>
 File: Images/SendingMessageBox500Follower.png Graphic file (type png)
 <use Images/SendingMessageBox500Follower.png>
-Package pdftex.def Info: Images/SendingMessageBox500Follower.png  used on input line 358.
+Package pdftex.def Info: Images/SendingMessageBox500Follower.png  used on input line 398.
 (pdftex.def)             Requested size: 418.25368pt x 170.82637pt.
- [28 <./Images/SendingMessageBox50Followers.png> <./Images/SendingMessageBox100Follower.png>]
-<Images/SendingMessageLatencyMean.png, id=401, 611.4042pt x 395.3169pt>
+ [30 <./Images/SendingMessageBox50Followers.png> <./Images/SendingMessageBox100Follower.png>]
+<Images/SendingMessageLatencyMean.png, id=404, 611.4042pt x 395.3169pt>
 File: Images/SendingMessageLatencyMean.png Graphic file (type png)
 <use Images/SendingMessageLatencyMean.png>
-Package pdftex.def Info: Images/SendingMessageLatencyMean.png  used on input line 364.
+Package pdftex.def Info: Images/SendingMessageLatencyMean.png  used on input line 404.
 (pdftex.def)             Requested size: 418.25368pt x 270.44057pt.
-<Images/SendingMessageLatencyMeanFireFly.png, id=402, 626.5809pt x 397.485pt>
+<Images/SendingMessageLatencyMeanFireFly.png, id=405, 626.5809pt x 397.485pt>
 File: Images/SendingMessageLatencyMeanFireFly.png Graphic file (type png)
 <use Images/SendingMessageLatencyMeanFireFly.png>
-Package pdftex.def Info: Images/SendingMessageLatencyMeanFireFly.png  used on input line 369.
+Package pdftex.def Info: Images/SendingMessageLatencyMeanFireFly.png  used on input line 410.
 (pdftex.def)             Requested size: 418.25368pt x 265.33101pt.
- [29 <./Images/SendingMessageBox500Follower.png> <./Images/SendingMessageLatencyMean.png>]
-<Images/SendingMessageLatency-Mean.png, id=411, 626.5809pt x 397.485pt>
+ [31 <./Images/SendingMessageBox500Follower.png> <./Images/SendingMessageLatencyMean.png>]
+<Images/SendingMessageLatency-Mean.png, id=414, 626.5809pt x 397.485pt>
 File: Images/SendingMessageLatency-Mean.png Graphic file (type png)
 <use Images/SendingMessageLatency-Mean.png>
-Package pdftex.def Info: Images/SendingMessageLatency-Mean.png  used on input line 375.
+Package pdftex.def Info: Images/SendingMessageLatency-Mean.png  used on input line 417.
 (pdftex.def)             Requested size: 418.25368pt x 265.33101pt.
- [30 <./Images/SendingMessageLatencyMeanFireFly.png>] [31 <./Images/SendingMessageLatency-Mean.png>] [32] (./thesis EN.aux)
+ [32 <./Images/SendingMessageLatencyMeanFireFly.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 420--421
+
+ []
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 431.
+
+[33 <./Images/SendingMessageLatency-Mean.png>] [34] (./thesis EN.aux)
 Package rerunfilecheck Info: File `"thesis EN".out' has not changed.
-(rerunfilecheck)             Checksum: 526F132F3ED50474EB5D4A5A81BAB93B;12818.
+(rerunfilecheck)             Checksum: 3E83C27787E3D182C73448AB28A39F8E;15305.
  ) 
 Here is how much of TeX's memory you used:
- 35028 strings out of 476025
- 823929 string characters out of 5790018
+ 34998 strings out of 476025
+ 822736 string characters out of 5790018
  1863388 words of memory out of 5000000
- 54814 multiletter control sequences out of 15000+600000
+ 54790 multiletter control sequences out of 15000+600000
  538860 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,7n,118p,1649b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,7n,118p,3342b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qagb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qagr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on "thesis EN.pdf" (33 pages, 1332598 bytes).
+Output written on "thesis EN.pdf" (35 pages, 1253380 bytes).
 PDF statistics:
- 494 PDF objects out of 1000 (max. 8388607)
- 358 compressed objects within 4 object streams
- 97 named destinations out of 1000 (max. 500000)
- 408 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 495 PDF objects out of 1000 (max. 8388607)
+ 365 compressed objects within 4 object streams
+ 95 named destinations out of 1000 (max. 500000)
+ 388 words of extra memory for PDF output out of 10000 (max. 10000000)
 
